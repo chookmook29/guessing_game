@@ -7,4 +7,4 @@ def index():
 
 @app.route("/", methods = ["POST", "GET"])
 def user_display():
-    return render_template("index.html", user = "Welcome " + request.form["new_user"] + "!")
+    return render_template("game.html", user = "Welcome " + request.form["new_user"] + "!")
