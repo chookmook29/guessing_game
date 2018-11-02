@@ -5,6 +5,13 @@
     <title></title>
   </head>
   <body>
-    <p>{{ user }}</p>
+    <p>{{ user_greeting }}</p>
+    <p>{{ current }}</p>
+    <form action = "/answer/" method = "post">
+         <p>Your Answer:</p>
+         <p><input type = "text" name = "answer" /></p>
+         <p><input type = "submit" value = "Submit" /></p>
+         <p>{{ answer }}</p>
+    </form>
   </body>
 </html>
