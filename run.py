@@ -12,6 +12,8 @@ def index():
 @app.route("/", methods = ["POST", "GET"])
 def user_display():
 	array = ("DOG", "CAT")
+	used = []
+	session["used"] = used
 	current = random.choice(array)
 	current_hidden = "?" * len(current)
 	session["current"] = current
@@ -26,7 +28,9 @@ def user_display():
 def guess():
 	guess = request.form["guess"]
 	guess = guess.upper()
-	used = guess
+	used = session.get("used")
+	used += guess
+	session["used"] = used
 	current_hidden = session.get("current_hidden")
 	current = session.get("current")
 	if guess in current:
@@ -38,6 +42,6 @@ def guess():
 				new_hidden += current_hidden[x]              
 		current_hidden = new_hidden
 		session["current_hidden"] = current_hidden
-		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "CORRECT!")
+		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "CORRECT!", used = used)
 	else:
-		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!")
+		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!", used = used)
