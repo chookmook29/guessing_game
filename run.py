@@ -11,16 +11,33 @@ def index():
 
 @app.route("/", methods = ["POST", "GET"])
 def user_display():
-	array = ("_ _ _", "_ _ _")
+	array = ("DOG", "CAT")
 	current = random.choice(array)
+	current_hidden = "?" * len(current)
 	session["current"] = current
+	session["current_hidden"] = current_hidden
 	user = request.form["new_user"]
 	user_greeting = "Welcome " + request.form["new_user"] + "!"
 	session["user_greeting"] = user_greeting
-	return render_template("game.html", user_greeting = user_greeting, current = current)
+	session["user"] = user
+	return render_template("game.html", user_greeting = user_greeting, current = current_hidden)
 
-@app.route("/answer/", methods=['POST', "GET"])
-def answer():
-	answer = request.form["answer"]
-	return render_template("game.html", answer = answer, current = session.get("current"), user_greeting = session.get("user_greeting"))
-	
+@app.route("/guess/", methods=['POST', "GET"])
+def guess():
+	guess = request.form["guess"]
+	guess = guess.upper()
+	used = guess
+	current_hidden = session.get("current_hidden")
+	current = session.get("current")
+	if guess in current:
+		new_hidden = ""
+		for x in range(len(current)):
+			if guess == current[x]:
+				new_hidden += guess
+			else:
+				new_hidden += current_hidden[x]              
+		current_hidden = new_hidden
+		session["current_hidden"] = current_hidden
+		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "CORRECT!")
+	else:
+		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!")

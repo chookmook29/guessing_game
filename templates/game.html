@@ -7,11 +7,11 @@
   <body>
     <p>{{ user_greeting }}</p>
     <p>{{ current }}</p>
-    <form action = "/answer/" method = "post">
-         <p>Your Answer:</p>
-         <p><input type = "text" name = "answer" /></p>
+    <form action = "/guess/" method = "post">
+         <p>Your guess:</p>
+         <p><input type = "text" name = "guess" /></p>
          <p><input type = "submit" value = "Submit" /></p>
-         <p>{{ answer }}</p>
+         <p>{{ guess }}</p>
     </form>
   </body>
 </html>
