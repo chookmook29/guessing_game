@@ -12,10 +12,11 @@ def index():
 @app.route("/", methods = ["POST", "GET"])
 def user_display():
 	array = ("DOG", "CAT")
+	session["array"] = array
 	used = []
+	session["used"] = used
 	score = 0
 	session["score"] = score
-	session["used"] = used
 	current = random.choice(array)
 	current_hidden = "?" * len(current)
 	session["current"] = current
@@ -39,7 +40,7 @@ def guess():
 	user = session.get("user")
 	user += ": "
 	score = session.get("score")
-	if guess in current:
+	if guess in current and current_hidden != current:
 		score += 1
 		session["score"] = score
 		new_hidden = ""
@@ -51,7 +52,7 @@ def guess():
 		current_hidden = new_hidden
 		session["current_hidden"] = current_hidden
 		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "CORRECT!", used = used, score = score, user = user)
-	else:
+	elif current_hidden != current:
 		if score == 0:
 			session["score"] = score
 			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!", used = used, score = score, user = user)
@@ -59,4 +60,15 @@ def guess():
 			score -= 1
 			session["score"] = score
 			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!", used = used, score = score, user = user)
+	elif current_hidden == current:
+		array = session.get("array")
+		current = random.choice(array)
+		current_hidden = "?" * len(current)
+		session["current"] = current
+		session["current_hidden"] = current_hidden
+		used = []
+		session["used"] = used
+		session["score"] = score
+		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "TRY NOW!", used = used, score = score, user = user)
+
 
