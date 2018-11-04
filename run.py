@@ -14,7 +14,7 @@ def index():
 def user_display():
 	array = ("ALLIGATOR", "BADGER", "BEAR", "BISON", "DEER", "DODO", "FOX", "LYNX", "PORCUPINE", "RHINOCEROS", "WOLF")
 	session["array"] = array
-	used = []
+	used = "USED: "
 	session["used"] = used
 	score = 0
 	session["score"] = score
@@ -67,7 +67,7 @@ def guess():
 		current_hidden = "?" * len(current)
 		session["current"] = current
 		session["current_hidden"] = current_hidden
-		used = []
+		used = "USED: "
 		session["used"] = used
 		session["score"] = score
 		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "TRY NOW!", used = used, score = score, user = user)
