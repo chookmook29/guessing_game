@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request, session
 import random
 
@@ -48,7 +49,7 @@ def guess():
 			if guess == current[x]:
 				new_hidden += guess
 			else:
-				new_hidden += current_hidden[x]              
+				new_hidden += current_hidden[x]
 		current_hidden = new_hidden
 		session["current_hidden"] = current_hidden
 		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "CORRECT!", used = used, score = score, user = user)
@@ -72,3 +73,7 @@ def guess():
 		return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "TRY NOW!", used = used, score = score, user = user)
 
 
+if __name__ == '__main__':
+    app.run(host=os.environ.get('IP'),
+            port=int(os.environ.get('PORT')),
+            debug=True)
