@@ -26,7 +26,6 @@ def user_display():
 	session["user"] = user
 	user_greeting = "Welcome " + user + "!"
 	session["user_greeting"] = user_greeting
-	session["user"] = user
 	return render_template("game.html", user_greeting = user_greeting, current = current_hidden)
 
 @app.route("/guess/", methods=['POST', "GET"])
