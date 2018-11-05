@@ -4,7 +4,10 @@ import random
 
 app = Flask(__name__)
 
-app.secret_key = 'secret'
+app.secret_key = "secret_word"
+
+SESSION_TYPE = "redis"
+app.config.from_object(__name__)
 
 @app.route("/")
 def index():
