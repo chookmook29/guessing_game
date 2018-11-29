@@ -15,7 +15,7 @@ def index():
 
 @app.route("/", methods = ["POST", "GET"])
 def user_display():
-	array = ("ALLIGATOR", "BADGER", "BEAR", "BISON", "DEER", "DODO", "FOX", "LYNX", "PORCUPINE", "RHINOCEROS", "WOLF")
+	array = ("ALLIGATOR", "BADGER", "BEAR", "BISON", "DEER", "DODO", "FOX", "LYNX", "PORCUPINE", "RHINOCEROS", "WOLF", "EAGLE", "GIRAFFE", "TURTLE", "PANDA", "HAWK", "DOLPHIN", "OWL", "LEOPARD")
 	session["array"] = array
 	used = "USED: "
 	session["used"] = used
