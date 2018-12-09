@@ -17,6 +17,7 @@ def index():
 def user_display():
 	array = ("ALLIGATOR", "BADGER", "BEAR", "BISON", "DEER", "DODO", "FOX", "LYNX", "PORCUPINE", "RHINOCEROS", "WOLF", "EAGLE", "GIRAFFE", "TURTLE", "PANDA", "HAWK", "DOLPHIN", "OWL", "LEOPARD")
 	session["array"] = array
+	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	used = "USED: "
 	session["used"] = used
 	score = 0
@@ -29,10 +30,11 @@ def user_display():
 	session["user"] = user
 	user_greeting = "Welcome " + user + "!"
 	session["user_greeting"] = user_greeting
-	return render_template("game.html", user_greeting = user_greeting, current = current_hidden)
+	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, letter_array = letter_array)
 
 @app.route("/guess/", methods=['POST', "GET"])
 def guess():
+	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	guess = request.form["guess"]
 	guess = guess.upper()
 	used = session.get("used")
@@ -63,17 +65,17 @@ def guess():
 			used = "USED: "
 			session["used"] = used
 			session["score"] = score
-			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "TRY NOW!", used = used, score = score, user = user)
+			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array)
 		else:
-			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "CORRECT!", used = used, score = score, user = user)
+			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "CORRECT!", used = used, score = score, user = user, letter_array = letter_array)
 	elif current_hidden != current:
 		if score == 0:
 			session["score"] = score
-			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!", used = used, score = score, user = user)
+			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!", used = used, score = score, user = user, letter_array = letter_array)
 		else:
 			score -= 1
 			session["score"] = score
-			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!", used = used, score = score, user = user)
+			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!", used = used, score = score, user = user, letter_array = letter_array)
 
 
 if __name__ == '__main__':
