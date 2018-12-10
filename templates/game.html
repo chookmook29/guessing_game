@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-  </head>
-  <body>
+{% extends "base.html" %}
+{% block content %}
     <p>{{ user_greeting }}</p>
     <p>{{ current }}</p>
     <form action = "/guess/" method = "post">
@@ -17,5 +11,4 @@
          <p>{{ used }}</p>
          <p>{{ user}}{{ score }}</p>
     </form>
-  </body>
-</html>
+{% endblock %}
