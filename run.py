@@ -45,7 +45,7 @@ def guess():
 	user = session.get("user")
 	user += ": "
 	score = session.get("score")
-	if guess in current and current_hidden != current:
+	if guess in current and guess not in current_hidden:
 		score += 1
 		session["score"] = score
 		new_hidden = ""
@@ -57,15 +57,9 @@ def guess():
 		current_hidden = new_hidden
 		session["current_hidden"] = current_hidden
 		if current_hidden == current:
-			array = session.get("array")
-			current = random.choice(array)
-			current_hidden = "?" * len(current)
 			session["current"] = current
-			session["current_hidden"] = current_hidden
-			used = "USED: "
-			session["used"] = used
 			session["score"] = score
-			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array)
+			return render_template("correct.html", guess = guess, current = current, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array)
 		else:
 			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "CORRECT!", used = used, score = score, user = user, letter_array = letter_array)
 	elif current_hidden != current:
@@ -77,6 +71,24 @@ def guess():
 			session["score"] = score
 			return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "WRONG!", used = used, score = score, user = user, letter_array = letter_array)
 
+@app.route("/next/", methods=['POST', "GET"])
+def next():
+	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
+	current_hidden = session.get("current_hidden")
+	current = session.get("current")
+	guess = "?"
+	user = session.get("user")
+	user += ": "
+	score = session.get("score")
+	array = session.get("array")
+	current = random.choice(array)
+	current_hidden = "?" * len(current)
+	session["current"] = current
+	session["current_hidden"] = current_hidden
+	used = "USED: "
+	session["used"] = used
+	session["score"] = score
+	return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
