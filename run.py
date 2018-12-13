@@ -90,6 +90,10 @@ def next():
 	session["score"] = score
 	return render_template("game.html", guess = guess, current = current_hidden, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array)
 
+@app.route("/check/", methods=['POST', "GET"])
+def check():
+	return render_template("score.html")
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
