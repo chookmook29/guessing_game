@@ -92,7 +92,12 @@ def next():
 
 @app.route("/check/", methods=['POST', "GET"])
 def check():
-	return render_template("score.html")
+	highscore = session.get("highscore")
+	user = session.get("user")
+	score = session.get("score")
+	highscore[user] = score
+	session["highscore"] = highscore
+	return render_template("score.html", highscore = highscore)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
