@@ -3,7 +3,7 @@
 	{% for key, value in highscore.items() %}
 		<p>{{key}}: {{value}}</p>
 	{% endfor %}
-	<form action = "/" method = "post">
+	<form action = "/" method = "get">
          <button type="submit">Back to start</button>
     </form>
 {% endblock %}
