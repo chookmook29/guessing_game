@@ -1,4 +1,4 @@
-.container {
+.my_container {/* Can't use Bootstrap's container class because it uses default padding left and right*/
   position: relative;
   width: 50%;
 }
@@ -31,7 +31,7 @@
 .overlay {
   opacity: 1;
 }
-.container:hover .overlay {
+.my_container:hover .overlay {
   opacity: 0;
 }
 
