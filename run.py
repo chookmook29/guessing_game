@@ -13,6 +13,9 @@ app.config.from_object(__name__)
 def index():
 	return render_template("index.html", user = "")
 
+def initialize_highscore():
+	session["highscore"] = {}
+
 @app.route("/", methods = ["POST", "GET"])
 def user_display():
 	animals = {"ALLIGATOR":"alligator.png", "BADGER":"badger.png", "FOX":"fox.png"}

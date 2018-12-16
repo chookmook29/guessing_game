@@ -11,7 +11,7 @@
          <p>{{ used }}</p>
          <p>{{ user}}{{ score }}</p>
          <p>HINT</p>
-         <p>{{ current_image }}</p>
+         <img src="{{ url_for('static', filename='img/' + current_image) }}" />
     </form>
     <form action = "/check/" method = "post">
          <button type="submit" name="guess">Quit & check highscore</button>
