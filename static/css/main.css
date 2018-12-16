@@ -1,6 +1,13 @@
 .my_container {/* Can't use Bootstrap's container class because it uses default padding left and right*/
+  margin: 0 auto;
   position: relative;
   width: 50%;
+}
+.my_row{
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 
 .image {
@@ -10,6 +17,7 @@
   }
 
 .overlay {
+  margin: 0 auto;
   cursor: -webkit-grab; 
   cursor: grab;
   border-radius: 50px;
