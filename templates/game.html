@@ -10,9 +10,13 @@
          <p>{{ guess }}</p>
          <p>{{ used }}</p>
          <p>{{ user}}{{ score }}</p>
-         <p>HINT</p>
-         <img src="{{ url_for('static', filename='img/' + current_image) }}" />
     </form>
+        <div class="container">
+            <img src="{{ url_for('static', filename='img/' + current_image) }}" alt="Hint" class="image" style="border-radius: 50px">
+            <div class="overlay">
+                <div class="text">HINT</div>
+            </div>
+        </div>
     <form action = "/check/" method = "post">
          <button type="submit" name="guess">Quit & check highscore</button>
     </form>
