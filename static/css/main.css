@@ -1,7 +1,7 @@
 .my_container {/* Can't use Bootstrap's container class because it uses default padding left and right*/
-  margin: 0 auto;
-  position: relative;
-  width: 50%;
+	margin: 0 auto;
+	position: relative;
+	width: 50%;
 }
 .my_row{
 	display: -ms-flexbox;
@@ -11,60 +11,66 @@
 }
 
 .image {
-  display: block;
-  width: 50%;
-  height: auto;
-  }
+	display: block;
+	width: 50%;
+	height: auto;
+}
 
 .overlay {
-  margin: 0 auto;
-  cursor: -webkit-grab; 
-  cursor: grab;
-  border-radius: 50px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 50%;
-  opacity: 0;
-  transition: .5s ease;
-  background: #49c0f0;
-  background: -moz-linear-gradient(top, #49c0f0 0%, #2cafe3 100%);
-  background: -webkit-linear-gradient(top, #49c0f0 0%,#2cafe3 100%);
-  background: linear-gradient(to bottom, #49c0f0 0%,#2cafe3 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49c0f0', endColorstr='#2cafe3',GradientType=0 );
+	margin: 0 auto;
+	cursor: -webkit-grab; 
+	cursor: grab;
+	border-radius: 50px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 50%;
+	opacity: 0;
+	transition: .5s ease;
+	background: #49c0f0;
+	background: -moz-linear-gradient(top, #49c0f0 0%, #2cafe3 100%);
+	background: -webkit-linear-gradient(top, #49c0f0 0%,#2cafe3 100%);
+	background: linear-gradient(to bottom, #49c0f0 0%,#2cafe3 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49c0f0', endColorstr='#2cafe3',GradientType=0 );
 }
+
 .overlay {
-  opacity: 1;
+	opacity: 1;
 }
+
 .my_container:hover .overlay {
-  opacity: 0;
+	opacity: 0;
 }
 
 .text {
-  color: black;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
+	color: black;
+	font-size: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
 }
 
 .letter_button {
-    display: inline-block;
-    font-weight: 650;
-    width: 14%;
-    border: 2px solid transparent;
-    padding: 1rem 2rem;
-    font-size: 2.5rem;
-    border-radius: .3rem;
-    margin-left: 0.312rem;
-    margin-right: 0.312rem;
-    margin-top: 0.312rem;
-    margin-bottom: 0.312rem;
+	display: inline-block;
+	font-weight: 650;
+	width: 14%;
+	border: 2px solid transparent;
+	padding: 1rem 2rem;
+	font-size: 2.5rem;
+	border-radius: .3rem;
+	margin-left: 0.312rem;
+	margin-right: 0.312rem;
+	margin-top: 0.312rem;
+	margin-bottom: 0.312rem;
+}
+
+.current {
+	font-size: 10rem;
 }

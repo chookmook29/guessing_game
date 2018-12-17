@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
     <p>{{ user_greeting }}</p>
-    <p>{{ current }}</p>
+    <p class="current">{{ current }}</p>
     <form action = "/guess/" method = "post">
          {% for letter in letter_array %}
          <button type="submit" value={{letter}} name="guess" class="letter_button">{{letter}}</button>
