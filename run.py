@@ -24,7 +24,7 @@ def user_display():
 	session["score"] = score
 	current = random.choice(list(animals.keys()))
 	current_image = animals[current]
-	current_hidden = "?" * len(current)
+	current_hidden = "ˍ" * len(current)# Special narrower underscore used from expanded UTF-8 set, standard one causing problems
 	session["current"] = current
 	session["current_image"] = current_image
 	session["current_hidden"] = current_hidden
@@ -79,14 +79,14 @@ def next():
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	current_hidden = session.get("current_hidden")
 	current = session.get("current")
-	guess = "?"
+	guess = "ˍ"
 	user = session.get("user")
 	user += ": "
 	score = session.get("score")
 	animals = session.get("animals")
 	current = random.choice(list(animals.keys()))
 	current_image = animals[current]
-	current_hidden = "?" * len(current)
+	current_hidden = "ˍ" * len(current)
 	session["current"] = current
 	session["current_image"] = current_image
 	session["current_hidden"] = current_hidden
