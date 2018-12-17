@@ -1,3 +1,7 @@
+html {
+  font-size: 100%;/* Used for rem units to display correctly*/
+}
+
 .my_container {/* Can't use Bootstrap's container class because it uses default padding left and right*/
 	margin: 0 auto;
 	position: relative;
