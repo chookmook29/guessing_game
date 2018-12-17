@@ -21,7 +21,9 @@ def user_display():
 	used = "USED: "
 	session["used"] = used
 	score = 0
+	attempts = 8
 	session["score"] = score
+	session["attempts"] = attempts
 	current = random.choice(list(animals.keys()))
 	current_image = animals[current]
 	current_hidden = "ˍ" * len(current)# Special narrower underscore used from expanded UTF-8 set, standard one causing problems
@@ -30,9 +32,10 @@ def user_display():
 	session["current_hidden"] = current_hidden
 	user = request.form["new_user"]
 	session["user"] = user
+	user += ": "
 	user_greeting = "Welcome " + user + "!"
 	session["user_greeting"] = user_greeting
-	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, letter_array = letter_array)
+	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts)
 
 @app.route("/guess/", methods=['POST', "GET"])
 def guess():
@@ -48,9 +51,8 @@ def guess():
 	user = session.get("user")
 	user += ": "
 	score = session.get("score")
-	if guess in current and guess not in current_hidden:
-		score += 1
-		session["score"] = score
+	attempts =  session.get("attempts")
+	if guess in current and guess not in current_hidden:# "guess not in current_hidden" condition prevents from guessing same exact letter twice (defensive design)
 		new_hidden = ""
 		for x in range(len(current)):
 			if guess == current[x]:
@@ -60,19 +62,33 @@ def guess():
 		current_hidden = new_hidden
 		session["current_hidden"] = current_hidden
 		if current_hidden == current:
+			score += 1
+			attempts = 8
 			session["current"] = current
 			session["score"] = score
-			return render_template("correct.html", guess = guess, current = current, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array)
+			session["attempts"] = attempts
+			return render_template("correct.html", guess = guess, current = current, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array, attempts = attempts)
 		else:
-			return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "CORRECT!", used = used, score = score, user = user, letter_array = letter_array)
+			return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "CORRECT!", used = used, score = score, user = user, letter_array = letter_array, attempts = attempts)
 	elif current_hidden != current:
-		if score == 0:
-			session["score"] = score
-			return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "WRONG!", used = used, score = score, user = user, letter_array = letter_array)
+		attempts -= 1
+		if attempts == 0:
+			highscore = session.get("highscore")
+			user = session.get("user")
+			score = session.get("score")
+			highscore = session.get("highscore")
+			if highscore is None:
+				highscore = {}
+				highscore[user] = score
+				session["highscore"] = highscore
+				return render_template("score.html", highscore = highscore)	
+			else:
+				highscore[user] = score
+				session["highscore"] = highscore
+				return render_template("score.html", highscore = highscore)
 		else:
-			score -= 1
-			session["score"] = score
-			return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "WRONG!", used = used, score = score, user = user, letter_array = letter_array)
+			session["attempts"] = attempts
+			return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "WRONG!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
 
 @app.route("/next/", methods=['POST', "GET"])
 def next():
@@ -83,6 +99,7 @@ def next():
 	user = session.get("user")
 	user += ": "
 	score = session.get("score")
+	attempts = session.get("attempts")
 	animals = session.get("animals")
 	current = random.choice(list(animals.keys()))
 	current_image = animals[current]
@@ -93,7 +110,8 @@ def next():
 	used = "USED: "
 	session["used"] = used
 	session["score"] = score
-	return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array)
+	session["attempts"] = attempts
+	return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
 
 @app.route("/check/", methods=['POST', "GET"])
 def check():
