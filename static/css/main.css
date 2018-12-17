@@ -75,6 +75,20 @@ html {
 	margin-bottom: 0.312rem;
 }
 
+.my_button {
+	display: inline-block;
+	font-weight: 650;
+	width: 14%;
+	border: 2px solid transparent;
+	padding: 1rem 2rem;
+	font-size: 2.5rem;
+	border-radius: .3rem;
+	margin-left: 0.312rem;
+	margin-right: 0.312rem;
+	margin-top: 0.312rem;
+	margin-bottom: 0.312rem;
+}
+
 .current {
 	font-size: 10rem;
 }
