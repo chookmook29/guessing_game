@@ -2,6 +2,7 @@
 {% block title%}Game{% endblock %}
 {% block content %}
     <p>{{ user_greeting }}</p>
+    <p> {{ attempts }} attempts left</p>
     <p class="current">{{ current }}</p>
     <form action = "/guess/" method = "post">
          {% for letter in letter_array %}
@@ -10,7 +11,6 @@
          <p>Your guess:</p>
          <p>{{ guess }}</p>
          <p>{{ used }}</p>
-         <p>{{ user }}{{ attempts }}</p>
     </form>
         <div class="my_container">
         	<div class="my_row justify-content-center">

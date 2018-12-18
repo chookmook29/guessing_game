@@ -33,10 +33,10 @@ def user_display():
 	session["current_image"] = current_image
 	session["current_hidden"] = current_hidden
 	user = request.form["new_user"]
-	session["user"] = user
-	user += ": "
 	user_greeting = "Welcome " + user + "!"
 	session["user_greeting"] = user_greeting
+	session["user"] = user
+	user += ": "
 	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts)
 
 @app.route("/guess/", methods=['POST', "GET"])
