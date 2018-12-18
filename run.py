@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, session
 import random
+import json
 
 app = Flask(__name__)
 
@@ -15,7 +16,8 @@ def index():
 
 @app.route("/", methods = ["POST", "GET"])
 def user_display():
-	animals = {"ALLIGATOR":"alligator.png", "BADGER":"badger.png", "FOX":"fox.png", "WOLF":"wolf.png"}
+	with open('list.json') as json_data:
+		animals = json.load(json_data)
 	session["animals"] = animals
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	used = "USED: "
