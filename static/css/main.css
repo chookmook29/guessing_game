@@ -1,5 +1,225 @@
+@media screen and (max-width: 575px) and (orientation: landscape){
+	h1 {
+		font-size: 4rem;
+	}
+
+	.current {
+		font-size: 4rem;
+	}
+	.letter_button {
+		font-size: 1rem;
+		padding: 1rem 2rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.image {
+		width: 50%;
+		height: 50%
+	}
+	.overlay {
+		width: 50%;
+		height: 50%;
+	}
+}
+@media screen and (max-width: 575px) and (orientation: portrait) {
+	h1 {
+		font-size: 2rem;
+	}
+
+	.current {
+		font-size: 2rem;
+	}
+	.letter_button {
+		font-size: 0.7rem;
+		padding: 0.5rem 1rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.image {
+		width: 50%;
+		height: 50%
+	}
+	.overlay {
+		width: 50%;
+		height: 50%;
+	}
+}
+@media screen and (min-width: 576px) and (orientation: landscape) {
+	h1 {
+		font-size: 4rem;
+	}
+
+	.current {
+		font-size: 4rem;
+	}
+	.letter_button {
+		font-size: 1rem;
+		padding: 1rem 2rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.image {
+		width: 50%;
+		height: 50%
+	}
+	.overlay {
+		width: 50%;
+		height: 50%;
+	}
+}
+@media screen and (min-width: 576px) and (orientation: portrait) {/*Nexus 7*/
+	h1 {
+		font-size: 4rem;
+	}
+
+	.current {
+		font-size: 4rem;
+	}
+	.letter_button {
+		font-size: 1rem;
+		padding: 0.6rem 1.2rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.image {
+		width: 50%;
+		height: 50%
+	}
+	.overlay {
+		width: 50%;
+		height: 50%;
+	}
+}
+@media screen and (min-width: 768px) and (orientation: landscape) {/*Used with iPhone X*/
+	h1 {
+		font-size: 4rem;
+	}
+
+	.current {
+		font-size: 4rem;
+	}
+	.letter_button {
+		font-size: 1rem;
+		padding: 1rem 2rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.image {
+		width: 50%;
+		height: 50%
+	}
+	.overlay {
+		width: 50%;
+		height: 50%;
+	}
+}
+@media screen and (min-width: 768px) and (orientation: portrait) {/*iPad, iPad Mini, Kindle Fire in portrait mode*/
+	h1 {
+		font-size: 4rem;
+	}
+
+	.current {
+		font-size: 4rem;
+	}
+	.letter_button {
+		font-size: 1rem;
+		padding: 1rem 2rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.image {
+		width: 50%;
+		height: 50%
+	}
+	.overlay {
+		width: 50%;
+		height: 50%;
+	}
+}
+@media screen and (min-width: 992px) and (orientation: landscape) {/*Tablets in landscape mode*/
+	h1 {
+		font-size: 4rem;
+	}
+
+	.current {
+		font-size: 4rem;
+	}
+	.letter_button {
+		font-size: 1rem;
+		padding: 1rem 2rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.image {
+		width: 50%;
+		height: 50%
+	}
+	.overlay {
+		width: 50%;
+		height: 50%;
+	}
+}
+@media screen and (min-width: 992px) and (orientation: portrait) {/*iPad Pro*/
+	h1 {
+		font-size: 4rem;
+	}
+
+	.current {
+		font-size: 4rem;
+	}
+	.letter_button {
+		font-size: 1rem;
+		padding: 1rem 2rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.image {
+		width: 50%;
+		height: 50%
+	}
+	.overlay {
+		width: 50%;
+		height: 50%;
+	}
+}
+@media screen and (min-width: 1200px) {/*Wide screens: laptop, desktop PC, iPad Pro landscape mode*/
+	h1 {
+		font-size: 6rem;
+	}
+
+	.current {
+		font-size: 4rem;
+	}
+	.letter_button {
+		font-size: 4rem;
+		padding: 1rem 2rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.image {
+		width: 50%;
+		height: 50%
+	}
+	.overlay {
+		width: 50%;
+		height: 50%;
+	}
+}
 html {
   font-size: 100%;/* Used for rem units to display correctly*/
+}
+
+h1 {
+	text-align: left;
 }
 
 .my_container {/* Can't use Bootstrap's container class because it uses default padding left and right*/
@@ -16,8 +236,6 @@ html {
 
 .image {
 	display: block;
-	width: 50%;
-	height: auto;
 }
 
 .overlay {
@@ -31,7 +249,6 @@ html {
 	left: 0;
 	right: 0;
 	height: 100%;
-	width: 50%;
 	opacity: 0;
 	transition: .5s ease;
 	background: #49c0f0;
@@ -64,10 +281,7 @@ html {
 .letter_button {
 	display: inline-block;
 	font-weight: 650;
-	max-width: 10%;
 	border: 2px solid transparent;
-	padding: 1rem 2rem;
-	font-size: 1rem;
 	border-radius: .3rem;
 	margin-left: 0.312rem;
 	margin-right: 0.312rem;
@@ -80,14 +294,9 @@ html {
 	font-weight: 650;
 	border: 2px solid transparent;
 	padding: 1rem 2rem;
-	font-size: 1rem;
 	border-radius: .3rem;
 	margin-left: 0.312rem;
 	margin-right: 0.312rem;
 	margin-top: 0.312rem;
 	margin-bottom: 0.312rem;
-}
-
-.current {
-	font-size: 5rem;
 }
