@@ -8,9 +8,7 @@
          {% for letter in letter_array %}
          <button type="submit" value={{letter}} name="guess" class="letter_button">{{letter}}</button>
          {% endfor %}
-         <p>Your guess:</p>
-         <p>{{ guess }}</p>
-         <p>{{ used }}</p>
+         <p>YOUR GUESS: {{ guess }} {{ used }}</p>
     </form>
         <div class="my_container">
         	<div class="my_row justify-content-center">
