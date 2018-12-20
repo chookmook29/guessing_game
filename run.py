@@ -1,4 +1,4 @@
-import os
+import os 
 from flask import Flask, render_template, request, session
 import random
 import json
@@ -16,7 +16,7 @@ def index():
 
 @app.route("/", methods = ["POST", "GET"])
 def user_display():
-	with open('list.json') as json_data:
+	with open('data/animals.json') as json_data:
 		animals = json.load(json_data)
 	session["animals"] = animals
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
