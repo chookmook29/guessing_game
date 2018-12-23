@@ -1,25 +1,26 @@
 {% extends "base.html" %}
 {% block title%}Game{% endblock %}
 {% block content %}
-    <p>{{ user_greeting }}</p>
-    <p> {{ attempts }} attempts left</p>
-    <p class="current">{{ current }}</p>
-    <form action = "/guess/" method = "post">
-         {% for letter in letter_array %}
-         <button type="submit" value={{letter}} name="guess" class="letter_button">{{letter}}</button>
-         {% endfor %}
-         <p>YOUR GUESS: {{ guess }} {{ used }}</p>
-    </form>
-        <div class="my_container">
-        	<div class="my_row justify-content-center">
-	            <img src="{{ url_for('static', filename='img/' + current_image) }}" alt="Hint" class="image" style="border-radius: 50px">
-	            <div class="overlay">
-	                <div class="text">HINT</div>
-	            </div>
-        	</div>
-        </div>
-    <form action = "/check/" method = "post">
-         <button class="my_button" type="submit" name="guess">Quit & check highscore</button>
-    </form>
+	    <p>{{ user_greeting }}</p>
+	    <p> {{ attempts }} attempts left</p>
+	    <p class="current">{{ current }}</p>
+	    <form action = "/guess/" method = "post">
+	         {% for letter in letter_array %}
+	         <button type="submit" value={{letter}} name="guess" class="letter_button">{{letter}}</button>
+	         {% endfor %}
+	         <p>YOUR GUESS: {{ guess }} {{ used }}</p>
+	    </form>
+	        <div class="my_hint">
+	        	<div class="my_row justify-content-center">
+		            <img src="{{ url_for('static', filename='img/' + current_image) }}" alt="Hint" class="image" style="border-radius: 50px">
+		            <div class="overlay">
+		                <div class="text">HINT</div>
+		            </div>
+	        	</div>
+	        </div>
+	    <form action = "/check/" method = "post">
+	         <button class="my_button" type="submit" name="guess">Quit & check highscore</button>
+	    </form>
+   	</div>
 {% endblock %}
 	

@@ -222,7 +222,7 @@ h1 {
 	text-align: left;
 }
 
-.my_container {/* Can't use Bootstrap's container class because it uses default padding left and right*/
+.my_hint {/* Can't use Bootstrap's container class because it uses default padding left and right*/
 	margin: 0 auto;
 	position: relative;
 	width: 50%;
@@ -262,7 +262,7 @@ h1 {
 	opacity: 1;
 }
 
-.my_container:hover .overlay {
+.my_hint:hover .overlay {
 	opacity: 0;
 }
 
@@ -299,4 +299,9 @@ h1 {
 	margin-right: 0.312rem;
 	margin-top: 0.312rem;
 	margin-bottom: 0.312rem;
+}
+.custom_container {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
 }
