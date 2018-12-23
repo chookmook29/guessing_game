@@ -131,6 +131,12 @@ def check():
 		session["highscore"] = highscore
 		return render_template("score.html", highscore = highscore)
 
+@app.errorhandler(410)
+@app.errorhandler(404)
+@app.errorhandler(500)
+def error_display(self):
+    return render_template('error.html')
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
