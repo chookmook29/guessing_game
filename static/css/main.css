@@ -214,8 +214,15 @@
 		height: 50%;
 	}
 }
+
 html {
   font-size: 100%;/* Used for rem units to display correctly*/
+}
+
+body {
+	background-image: url("/static/img/sunrise.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 h1 {
@@ -227,7 +234,8 @@ h1 {
 	position: relative;
 	width: 50%;
 }
-.my_row{
+
+.my_row {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-wrap: wrap;
