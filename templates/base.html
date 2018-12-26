@@ -18,8 +18,8 @@
             </div>
             <div class="my_dropdown float-right"><button class="drop_button">&#9776;</button>
               <div class="my_dropdown-content">
-                <a href="_blank">USER</a>
-                <a href="_blank">SCORE</a>
+                <a href="_blank">{{ user|upper }}</a>
+                <a href="_blank">SCORE: {{ score }}</a>
                 <a href="{{ url_for('check') }}">TOP PLAYERS</a>
                 <a href="_blank">RULES</a>
               </div>

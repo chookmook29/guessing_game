@@ -36,8 +36,7 @@ def user_display():
 	user_greeting = "Welcome " + user + "!"
 	session["user_greeting"] = user_greeting
 	session["user"] = user
-	user += ": "
-	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts)
+	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts, score =  score)
 
 @app.route("/guess", methods=['POST', "GET"])
 def guess():
@@ -51,7 +50,6 @@ def guess():
 	current = session.get("current")
 	current_image = session.get("current_image")
 	user = session.get("user")
-	user += ": "
 	score = session.get("score")
 	attempts =  session.get("attempts")
 	if guess in current and guess not in current_hidden:# "guess not in current_hidden" condition prevents from guessing same exact letter twice (defensive design)
@@ -97,9 +95,8 @@ def next():
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	current_hidden = session.get("current_hidden")
 	current = session.get("current")
-	guess = "ˍ"
+	guess = " "
 	user = session.get("user")
-	user += ": "
 	score = session.get("score")
 	attempts = session.get("attempts")
 	animals = session.get("animals")
@@ -118,16 +115,16 @@ def next():
 @app.route("/check", methods=['POST', "GET"])
 def check():
 	highscore = session.get("highscore")
-	user = session.get("user")
+	top_user = session.get("user")
 	score = session.get("score")
 	highscore = session.get("highscore")
 	if highscore is None:
 		highscore = {}
-		highscore[user] = score
+		highscore[top_user] = score
 		session["highscore"] = highscore
 		return render_template("score.html", highscore = highscore)	
 	else:
-		highscore[user] = score
+		highscore[top_user] = score
 		session["highscore"] = highscore
 		return render_template("score.html", highscore = highscore)
 
