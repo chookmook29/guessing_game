@@ -3,7 +3,7 @@
 {% block content %}
     <h2>Correct!</h2><!--h2 used because it's smaller and will not get aligned to left like h1-->
     <p>The answer is: {{current}}</p>
-    <form action = "/next/" method = "post">
+    <form action = "/next" method = "post">
          <button class="my_button" type="submit">NEXT</button>
     </form>
 {% endblock %}

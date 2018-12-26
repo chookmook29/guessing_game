@@ -39,7 +39,7 @@ def user_display():
 	user += ": "
 	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts)
 
-@app.route("/guess/", methods=['POST', "GET"])
+@app.route("/guess", methods=['POST', "GET"])
 def guess():
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	guess = request.form["guess"]
@@ -92,7 +92,7 @@ def guess():
 			session["attempts"] = attempts
 			return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "WRONG!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
 
-@app.route("/next/", methods=['POST', "GET"])
+@app.route("/next", methods=['POST', "GET"])
 def next():
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	current_hidden = session.get("current_hidden")
@@ -115,7 +115,7 @@ def next():
 	session["attempts"] = attempts
 	return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
 
-@app.route("/check/", methods=['POST', "GET"])
+@app.route("/check", methods=['POST', "GET"])
 def check():
 	highscore = session.get("highscore")
 	user = session.get("user")
