@@ -14,7 +14,7 @@ app.config.from_object(__name__)
 def index():
 	return render_template("index.html", user = "")
 
-@app.route("/", methods = ["POST", "GET"])
+@app.route("/user_display", methods = ["POST", "GET"])
 def user_display():
 	with open('data/animals.json') as json_data:
 		animals = json.load(json_data)
@@ -114,6 +114,8 @@ def next():
 
 @app.route("/check", methods=['POST', "GET"])
 def check():
+	user = session.get("user")
+	score = session.get("score")
 	highscore = session.get("highscore")
 	top_user = session.get("user")
 	score = session.get("score")
@@ -122,17 +124,23 @@ def check():
 		highscore = {}
 		highscore[top_user] = score
 		session["highscore"] = highscore
-		return render_template("score.html", highscore = highscore)	
+		return render_template("score.html", highscore = highscore, user = user, score = score)	
 	else:
 		highscore[top_user] = score
 		session["highscore"] = highscore
-		return render_template("score.html", highscore = highscore)
+		return render_template("score.html", highscore = highscore, user = user, score = score)
+
+@app.route("/rules")
+def rules():
+	user = session.get("user")
+	score = session.get("score")
+	return render_template("rules.html", user = user, score = score)
 
 @app.errorhandler(410)
 @app.errorhandler(404)
 @app.errorhandler(500)
 def error_display(self):
-    return render_template('error.html')
+    return render_template("error.html")
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
