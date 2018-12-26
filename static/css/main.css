@@ -1,5 +1,9 @@
 @media screen and (max-width: 575px) and (orientation: landscape){
 
+	body {
+		background-image: url("/static/img/sunrise.jpg");
+	}
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -24,6 +28,10 @@
 	}
 }
 @media screen and (max-width: 575px) and (orientation: portrait) {
+
+	body {
+		background-image: url("/static/img/sunrise_narrow.jpg");
+	}
 
 	h1 {
 		font-size: 2rem;
@@ -50,6 +58,10 @@
 }
 @media screen and (min-width: 576px) and (orientation: landscape) {
 
+	body {
+		background-image: url("/static/img/sunrise.jpg");
+	}
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -74,6 +86,10 @@
 	}
 }
 @media screen and (min-width: 576px) and (orientation: portrait) {/*Nexus 7*/
+
+	body {
+		background-image: url("/static/img/sunrise_narrow.jpg");
+	}
 
 	h1 {
 		font-size: 4rem;
@@ -100,6 +116,10 @@
 }
 @media screen and (min-width: 768px) and (orientation: landscape) {/*Used with iPhone X*/
 
+	body {
+		background-image: url("/static/img/sunrise.jpg");
+	}
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -124,6 +144,10 @@
 	}
 }
 @media screen and (min-width: 768px) and (orientation: portrait) {/*iPad, iPad Mini, Kindle Fire in portrait mode*/
+
+	body {
+		background-image: url("/static/img/sunrise_narrow.jpg");
+	}
 
 	h1 {
 		font-size: 4rem;
@@ -150,6 +174,10 @@
 }
 @media screen and (min-width: 992px) and (orientation: landscape) {/*Tablets in landscape mode*/
 
+	body {
+		background-image: url("/static/img/sunrise.jpg");
+	}
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -174,6 +202,10 @@
 	}
 }
 @media screen and (min-width: 992px) and (orientation: portrait) {/*iPad Pro*/
+
+	body {
+		background-image: url("/static/img/sunrise.jpg");
+	}
 
 	h1 {
 		font-size: 4rem;
@@ -200,6 +232,9 @@
 }
 @media screen and (min-width: 1200px) {/*Wide screens: laptop, desktop PC, iPad Pro landscape mode*/
 
+	body {
+		background-image: url("/static/img/sunrise.jpg");
+	}
 	h1 {
 		font-size: 6rem;
 	}
@@ -230,7 +265,6 @@ html {
 }
 
 body {
-	background-image: url("/static/img/sunrise.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
