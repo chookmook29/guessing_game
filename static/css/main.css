@@ -1,4 +1,5 @@
 @media screen and (max-width: 575px) and (orientation: landscape){
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -23,6 +24,7 @@
 	}
 }
 @media screen and (max-width: 575px) and (orientation: portrait) {
+
 	h1 {
 		font-size: 2rem;
 	}
@@ -47,6 +49,7 @@
 	}
 }
 @media screen and (min-width: 576px) and (orientation: landscape) {
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -71,6 +74,7 @@
 	}
 }
 @media screen and (min-width: 576px) and (orientation: portrait) {/*Nexus 7*/
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -95,6 +99,7 @@
 	}
 }
 @media screen and (min-width: 768px) and (orientation: landscape) {/*Used with iPhone X*/
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -119,6 +124,7 @@
 	}
 }
 @media screen and (min-width: 768px) and (orientation: portrait) {/*iPad, iPad Mini, Kindle Fire in portrait mode*/
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -143,6 +149,7 @@
 	}
 }
 @media screen and (min-width: 992px) and (orientation: landscape) {/*Tablets in landscape mode*/
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -167,6 +174,7 @@
 	}
 }
 @media screen and (min-width: 992px) and (orientation: portrait) {/*iPad Pro*/
+
 	h1 {
 		font-size: 4rem;
 	}
@@ -191,6 +199,7 @@
 	}
 }
 @media screen and (min-width: 1200px) {/*Wide screens: laptop, desktop PC, iPad Pro landscape mode*/
+
 	h1 {
 		font-size: 6rem;
 	}
@@ -309,6 +318,7 @@ p {
 	margin-right: 0.312rem;
 	margin-top: 0.312rem;
 	margin-bottom: 0.312rem;
+	text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);/* Shadow makes button visible when background is very bright*/
 }
 
 .letter_button:focus {
