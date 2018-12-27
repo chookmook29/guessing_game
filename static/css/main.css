@@ -297,6 +297,13 @@ body {
 	background-position: center center;
 }
 
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+
 h1 {
 	text-align: left;
 	color: white;
