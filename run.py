@@ -14,8 +14,8 @@ app.config.from_object(__name__)
 def index():
 	return render_template("index.html", user = "")
 
-@app.route("/user_display", methods = ["POST", "GET"])
-def user_display():
+@app.route("/initial_word", methods = ["POST", "GET"])
+def initial_word():
 	with open('data/animals.json') as json_data:
 		animals = json.load(json_data)
 	session["animals"] = animals
@@ -38,8 +38,8 @@ def user_display():
 	session["user"] = user
 	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts, score =  score)
 
-@app.route("/guess", methods=['POST', "GET"])
-def guess():
+@app.route("/user_guess", methods=['POST', "GET"])
+def user_guess():
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	guess = request.form["guess"]
 	guess = guess.upper()
@@ -81,17 +81,17 @@ def guess():
 				highscore = {}
 				highscore[user] = score
 				session["highscore"] = highscore
-				return render_template("score.html", highscore = highscore)	
+				return render_template("score.html", highscore = highscore, user = user, score = score)	
 			else:
 				highscore[user] = score
 				session["highscore"] = highscore
-				return render_template("score.html", highscore = highscore)
+				return render_template("score.html", highscore = highscore, user = user, score = score)
 		else:
 			session["attempts"] = attempts
 			return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "WRONG!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
 
-@app.route("/next", methods=['POST', "GET"])
-def next():
+@app.route("/next_word", methods=['POST', "GET"])
+def next_word():
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	current_hidden = session.get("current_hidden")
 	current = session.get("current")

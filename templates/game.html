@@ -4,7 +4,7 @@
 	    <p>{{ user_greeting }}</p>
 	    <p> {{ attempts }} attempts left</p>
 	    <p class="current">{{ current }}</p>
-	    <form action = "/guess" method = "post">
+	    <form action = "/user_guess" method = "post">
 	         {% for letter in letter_array %}
 	         <button type="submit" value={{letter}} name="guess" class="letter_button">{{letter}}</button>
 	         {% endfor %}
