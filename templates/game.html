@@ -2,13 +2,12 @@
 {% block title%}Game{% endblock %}
 {% block content %}
 	    <p>{{ user_greeting }}</p>
-	    <p> {{ attempts }} attempts left</p>
+	    <p> {{ attempts }} attempts left, your guess: {{ guess }} {{ used }}</p>
 	    <p class="current">{{ current }}</p>
 	    <form action = "/user_guess" method = "post">
 	         {% for letter in letter_array %}
 	         <button type="submit" value={{letter}} name="guess" class="letter_button">{{letter}}</button>
 	         {% endfor %}
-	         <p>YOUR GUESS: {{ guess }} {{ used }}</p>
 	    </form>
 	        <div class="my_hint">
 	        	<div class="my_row justify-content-center">

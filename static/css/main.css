@@ -267,7 +267,7 @@
 		font-size: 4rem;
 	}
 	.letter_button {
-		font-size: 4rem;
+		font-size: 1.8rem;
 		padding: 1rem 2rem;
 	}
 	.my_button {
@@ -451,4 +451,13 @@ p {
 }
 .current {
 	color: white;
+}
+.initial_form {
+	padding: 10%;
+}
+.custom_row {/*Bootstrap row was setting margins left and right -15px*/
+	display: flex;
+}
+.content {
+	width: 100%
 }
