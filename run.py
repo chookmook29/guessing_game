@@ -20,6 +20,7 @@ def initial_word():
 		animals = json.load(json_data)
 	session["animals"] = animals
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
+	session["letter_array"] = letter_array
 	used = "USED: "
 	guess = "?"
 	session["used"] = used
@@ -41,7 +42,7 @@ def initial_word():
 
 @app.route("/user_guess", methods=['POST', "GET"])
 def user_guess():
-	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
+	letter_array = session.get("letter_array")
 	guess = request.form["guess"]
 	guess = guess.upper()
 	used = session.get("used")
@@ -93,7 +94,7 @@ def user_guess():
 
 @app.route("/next_word", methods=['POST', "GET"])
 def next_word():
-	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
+	letter_array = session.get("letter_array")
 	current_hidden = session.get("current_hidden")
 	current = session.get("current")
 	guess = "?"
@@ -133,7 +134,7 @@ def check():
 
 @app.route("/back", methods=['POST', "GET"])
 def back():
-	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
+	letter_array = session.get("letter_array")
 	current_hidden = session.get("current_hidden")
 	current = session.get("current")
 	current_image = session.get("current_image")
