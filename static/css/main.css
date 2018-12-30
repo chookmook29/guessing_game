@@ -7,7 +7,9 @@
 	h1 {
 		font-size: 4rem;
 	}
-
+	.form {
+		padding: 0 10% 0 10%;
+	}
 	.current {
 		font-size: 4rem;
 	}
@@ -35,11 +37,9 @@
 	body {
 		background-image: url("/static/img/sunrise_narrow.jpg");
 	}
-
 	h1 {
 		font-size: 2rem;
 	}
-
 	.current {
 		font-size: 2rem;
 	}
@@ -71,7 +71,9 @@
 	h1 {
 		font-size: 4rem;
 	}
-
+	.form {
+		padding: 0 10% 0 10%;
+	}
 	.current {
 		font-size: 4rem;
 	}
@@ -131,11 +133,12 @@
 	body {
 		background-image: url("/static/img/sunrise.jpg");
 	}
-
 	h1 {
 		font-size: 4rem;
 	}
-
+	.form {
+		padding: 0 10% 0 10%;
+	}
 	.current {
 		font-size: 4rem;
 	}
@@ -195,11 +198,12 @@
 	body {
 		background-image: url("/static/img/sunrise.jpg");
 	}
-
 	h1 {
 		font-size: 4rem;
 	}
-
+	.form {
+		padding: 0 12% 0 12%;
+	}
 	.current {
 		font-size: 4rem;
 	}
@@ -261,6 +265,9 @@
 	}
 	h1 {
 		font-size: 6rem;
+	}
+	.form {
+		padding: 0 14% 0 14%;
 	}
 
 	.current {
