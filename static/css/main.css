@@ -461,3 +461,9 @@ p {
 .content {
 	width: 100%
 }
+.important {
+	font-size: 1.2rem;
+}
+.unimportant {
+	font-size: 0.6rem;
+}

@@ -2,7 +2,7 @@
 {% block title%}Game{% endblock %}
 {% block content %}
 	    <p>{{ user_greeting }}</p>
-	    <p> {{ attempts }} attempts left, your guess: {{ guess }} {{ used }}</p>
+	    <p class="text-pop-up-top"><span class="important">{{ attempts }}</span> attempts left, your guess: <span class="important">{{ guess }}</span> <span class="unimportant">{{ used }}</span></p>
 	    <p class="current">{{ current }}</p>
 	    <form action = "/user_guess" method = "post">
 	         {% for letter in letter_array %}
