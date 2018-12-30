@@ -142,7 +142,7 @@ def back():
 	score = session.get("score")
 	attempts =  session.get("attempts")
 	used = session.get("used")
-	guess = " "
+	guess = "?"
 	return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
 
 @app.route("/rules")
