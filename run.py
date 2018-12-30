@@ -21,6 +21,7 @@ def initial_word():
 	session["animals"] = animals
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	used = "USED: "
+	guess = "?"
 	session["used"] = used
 	score = 0
 	attempts = 8
@@ -36,7 +37,7 @@ def initial_word():
 	user_greeting = "Welcome " + user + "!"
 	session["user_greeting"] = user_greeting
 	session["user"] = user
-	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts, score =  score)
+	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts, score =  score, used = used, guess = guess)
 
 @app.route("/user_guess", methods=['POST', "GET"])
 def user_guess():
@@ -95,7 +96,7 @@ def next_word():
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	current_hidden = session.get("current_hidden")
 	current = session.get("current")
-	guess = " "
+	guess = "?"
 	user = session.get("user")
 	score = session.get("score")
 	attempts = session.get("attempts")

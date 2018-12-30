@@ -303,6 +303,9 @@ footer {
 	width: 100%;
 	text-align: center;
 }
+article {
+	padding: 2rem; 	
+}
 
 h1 {
 	text-align: left;
