@@ -8,6 +8,7 @@ class test_if_statement(unittest.TestCase):
 		current = random.choice(array)
 		guess = random.choice(letters)
 		self.assertIn(guess, current)
+		self.assertNotIn(guess, current)
 		
 
 if __name__ == '__main__':
