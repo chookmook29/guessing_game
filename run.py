@@ -12,7 +12,7 @@ app.config.from_object(__name__)
 
 @app.route("/")
 def index():
-	return render_template("index.html", user = "")
+	return render_template("index.html")
 
 @app.route("/initial_word", methods = ["POST", "GET"])
 def initial_word():
