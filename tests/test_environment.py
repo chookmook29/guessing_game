@@ -11,7 +11,7 @@ import json
 
 class FlaskTestCase(unittest.TestCase):
 
-	def setUp(self):#Check if app initialize
+	def setUp(self):#App initialize
 		self.app = app.test_client()
 		self.app.application.config['SECRET_KEY'] = "secret_word"
 		self.app.application.config['SESSION_COOKIE_DOMAIN'] = None

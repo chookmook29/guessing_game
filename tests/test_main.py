@@ -42,6 +42,15 @@ class test(unittest.TestCase):
 		self.assertIs(current_image, "alligator.png")
 		self.assertIs(current, "ALLIGATOR")
 
+	def test_delete_dict_element(self):
+		animals = {"BEAR":"bear.png"}
+		del animals["BEAR"]
+		if animals == {}:
+			check = True
+		else:
+			check = False
+		self.assertEqual(check, True)
+
 	def test_empty_dict(self):
 		highscore = None
 		user = "Joe"
@@ -50,6 +59,7 @@ class test(unittest.TestCase):
 				highscore = {}
 				highscore[user] = score
 		self.assertEqual({"Joe":"10"}, highscore)
+
 """
 Check if app creates empty dictionary for highscores when first entry arrives,
 even if I declared highscore as empty dictionary during initialization,

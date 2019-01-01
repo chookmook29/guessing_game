@@ -18,7 +18,6 @@ def index():
 def initial_word():
 	with open('data/animals.json') as json_data:
 		animals = json.load(json_data)
-	session["animals"] = animals
 	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
 	session["letter_array"] = letter_array
 	used = "USED: "
@@ -30,6 +29,8 @@ def initial_word():
 	session["attempts"] = attempts
 	current = random.choice(list(animals.keys()))
 	current_image = animals[current]
+	del animals[current]
+	session["animals"] = animals
 	current_hidden = "ˍ" * len(current)# Special narrower underscore used from expanded UTF-8 set, standard one causing problems
 	session["current"] = current
 	session["current_image"] = current_image
@@ -102,17 +103,36 @@ def next_word():
 	score = session.get("score")
 	attempts = session.get("attempts")
 	animals = session.get("animals")
-	current = random.choice(list(animals.keys()))
-	current_image = animals[current]
-	current_hidden = "ˍ" * len(current)
-	session["current"] = current
-	session["current_image"] = current_image
-	session["current_hidden"] = current_hidden
-	used = "USED: "
-	session["used"] = used
-	session["score"] = score
-	session["attempts"] = attempts
-	return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
+	if animals == {}:
+		user = session.get("user")
+		score = session.get("score")
+		highscore = session.get("highscore")
+		top_user = session.get("user")
+		score = session.get("score")
+		highscore = session.get("highscore")
+		if highscore is None:
+			highscore = {}
+			highscore[top_user] = score
+			session["highscore"] = highscore
+			return render_template("final.html", highscore = highscore, user = user, score = score)	
+		else:
+			highscore[top_user] = score
+			session["highscore"] = highscore
+			return render_template("final.html", highscore = highscore, user = user, score = score)	
+	else:
+		current = random.choice(list(animals.keys()))
+		current_image = animals[current]
+		del animals[current]
+		session["animals"] = animals
+		current_hidden = "ˍ" * len(current)
+		session["current"] = current
+		session["current_image"] = current_image
+		session["current_hidden"] = current_hidden
+		used = "USED: "
+		session["used"] = used
+		session["score"] = score
+		session["attempts"] = attempts
+		return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
 
 @app.route("/check", methods=['POST', "GET"])
 def check():
@@ -174,9 +194,9 @@ def final():
 @app.errorhandler(404)
 @app.errorhandler(500)
 def error_display(self):
-    return render_template("error.html")
+	return render_template("error.html")
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT')),
-            debug=False)
+	app.run(host=os.environ.get('IP'),
+			port=int(os.environ.get('PORT')),
+			debug=False)
