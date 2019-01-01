@@ -36,9 +36,9 @@ class test(unittest.TestCase):
 		self.assertNotIn(guess, current)
 
 	def test_dictionary(self):
-		array = {"ALLIGATOR":"alligator.png"}
-		current = random.choice(array.keys())
-		current_image = array[current]
+		dictionary = {"ALLIGATOR":"alligator.png"}
+		current = random.choice(dictionary.keys())
+		current_image = dictionary[current]
 		self.assertIs(current_image, "alligator.png")
 		self.assertIs(current, "ALLIGATOR")
 
