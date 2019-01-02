@@ -8,19 +8,19 @@ When creating this project I was greatly influenced by Clarissa Peterson's [Lear
 ### Users Stories:
 
 To make things easier, I've created User Stories. Here are some examples:
-- As a website user, I want to able sign in. 
-- As a player, I want to check if I picked correct letter.
-- As a player, I want to check my score.
-- As a player, I want to compare my score with other players.
-- As a player, I want help when I'm stuck.
+- As a user, I want to able sign in. 
+- As a user, I want to check if I picked correct letter.
+- As a user, I want to check my score.
+- As a user, I want to compare my score with other players.
+- As a user, I want help when I'm stuck.
 
 ### Wireframes
 
-Examples of wireframes I've created for this project:
--[Early idea](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup1.png)
--[Early tablet screen layout](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup2.png)
--[More compact mobile first layout](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup3.png)
--[Just before project's development started](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup4.png)
+Examples of wireframes I've used for this project:
+- [Early idea](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup1.png)
+- [Early tablet screen layout](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup2.png)
+- [More compact mobile first layout](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup3.png)
+- [Just before project's development started](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup4.png)
 Some concepts of the design and some features changed over the development process.
 
 ## Features
@@ -41,8 +41,10 @@ In addition, you may also use this section to discuss plans for additional featu
 ## Technologies Used
 - HTML and CSS
     - project uses **HTML** and **CSS** to build webpages.
+- [Tidy](http://www.html-tidy.org/)
+    - Used to fix markup errors.
 - [Bootstrap](https://getbootstrap.com/)
-    - The project uses some **Bootstrap** elements for webpages' layout.
+    - The project uses some **Bootstrap** elements for more responsive layout.
 - [Python](https://www.python.org/)
     - Back-end was written in **Python** .
     - **vnev** library was used in development of the project.
@@ -60,9 +62,16 @@ In addition, you may also use this section to discuss plans for additional featu
     - Used to store large static media files.
 - [Balsamiq](https://balsamiq.com/)
     - Before development started, **Balsamiq** was used for wireframes.
+- [GitHub]((https://www.github.com/)
+    - Used for version control and backup.
+
 
 ## Testing
-### Automated tests before deployment:
+### Automated written tests:
+### Manual Browser Testing during develoment:
+### User testing:
+
+All tests can be found in test.py file.
 
 ## Deployment
 
