@@ -364,8 +364,52 @@ p {
 
  .my_hint:hover img {
  	opacity: 1;
- 	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-          animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+ 	-webkit-animation: fadeInFromNone 0.7s;
+    -moz-animation: fadeInFromNone 0.7s;
+    -o-animation: fadeInFromNone 0.7s;
+    animation: fadeInFromNone 0.7s;
+}
+
+@-webkit-keyframes fadeInFromNone {
+    0% {
+        opacity: 0;
+    }
+    100% {
+    	display: block;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeInFromNone {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+    	display: block;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeInFromNone {
+    0% {
+        opacity: 0;
+    }
+    100% {
+    	display: block;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInFromNone {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+    	display: block;
+        opacity: 1;
+    }
 }
 
 .text {
