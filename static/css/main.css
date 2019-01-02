@@ -21,8 +21,7 @@
 		font-size: 1rem;
 	}
 	.image {
-		width: 50%;
-		height: 50%
+		width: 80%;
 	}
 	.overlay {
 		width: 50%;
@@ -52,7 +51,6 @@
 	}
 	.image {
 		width: 50%;
-		height: 50%
 	}
 	.overlay {
 		width: 50%;
@@ -86,7 +84,6 @@
 	}
 	.image {
 		width: 50%;
-		height: 50%
 	}
 	.overlay {
 		width: 50%;
@@ -118,7 +115,6 @@
 	}
 	.image {
 		width: 50%;
-		height: 50%
 	}
 	.overlay {
 		width: 50%;
@@ -151,7 +147,6 @@
 	}
 	.image {
 		width: 50%;
-		height: 50%
 	}
 	.overlay {
 		width: 50%;
@@ -183,7 +178,6 @@
 	}
 	.image {
 		width: 50%;
-		height: 50%
 	}
 	.overlay {
 		width: 50%;
@@ -216,7 +210,6 @@
 	}
 	.image {
 		width: 50%;
-		height: 50%
 	}
 	.overlay {
 		width: 50%;
@@ -248,7 +241,6 @@
 	}
 	.image {
 		width: 50%;
-		height: 50%
 	}
 	.overlay {
 		width: 50%;
@@ -282,7 +274,6 @@
 	}
 	.image {
 		width: 50%;
-		height: 50%
 	}
 	.overlay {
 		width: 50%;
@@ -331,6 +322,8 @@ p {
 	margin: 0 auto;
 	position: relative;
 	width: 50%;
+	border: 4px;
+	border-color: white;
 }
 
 .my_row {
@@ -359,14 +352,20 @@ p {
 	height: 100%;
 	opacity: 1;
 	transition: .5s ease;
-	background: -moz-linear-gradient(top, #49c0f0 0%, #2cafe3 100%);
-	background: -webkit-linear-gradient(top, #49c0f0 0%,#2cafe3 100%);
-	background: linear-gradient(to bottom, #49c0f0 0%,#2cafe3 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#49c0f0', endColorstr='#2cafe3',GradientType=0 );
 }
 
 .my_hint:hover .overlay {
 	opacity: 0;
+}
+
+.my_hint img {
+  opacity: 0;
+}
+
+ .my_hint:hover img {
+ 	opacity: 1;
+ 	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .text {
