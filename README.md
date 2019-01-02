@@ -1,5 +1,6 @@
 # Wildlife Quiz
-Wildflife Quiz is an online guessing game written in Python using the Flask framework. It tests user's knowledge about wild animals in fun and entertaining way, not being too challenging.
+
+Wildlife Quiz is a quick and easy online guessing game for one person that requires nothing more than the ability to spell and some knowledge about animals. It was written in Python using the Flask framework. It tests your knowledge in fun and entertaining way, not being too challenging.
  
 ## UX
 
@@ -22,6 +23,7 @@ Examples of wireframes I've used for this project:
 - [Early tablet screen layout](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup2.png)
 - [More compact mobile first layout](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup3.png)
 - [Just before project's development started](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup4.png)
+
 Some concepts of the design and some features changed over the development process.
 
 ## Features
@@ -29,6 +31,7 @@ Some concepts of the design and some features changed over the development proce
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
+
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
 - ...
 
@@ -37,6 +40,7 @@ For some/all of your features, you may choose to reference the specific project 
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
+
 - I would like to make onmouseover event in JavaScript trigger loss of player's remaining "attempts" by one each time, however this would require 
 
 ## Technologies Used
@@ -89,10 +93,11 @@ In addition, if it is not obvious, you should also describe how to run your code
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+
 - Images where taken from [Shutterstock.com](https://www.shutterstock.com/)
 
 ### Media
+
 - The photos used in this site were obtained from [Shutterstock.com](https://www.shutterstock.com/)
 
 ### Acknowledgements

@@ -109,7 +109,7 @@ class FlaskTestCase(unittest.TestCase):
 
 	def test_final(self):#Check if game.html has been created
 		with app.app_context():
-			response = self.app.get("/final", data = dict(self.highscore , user = "test2", score = 2)) 
+			response = self.app.get("/final", data = dict(highscore="test" , user = "test2", score = 2)) 
 			self.assertIn("displayed on top of the page", str(response.data))
 
 if __name__ == '__main__':
