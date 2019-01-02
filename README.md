@@ -1,9 +1,10 @@
 # Wildlife Quiz
-Wildflife Quiz is an online guessing game written in Python using the Flask framework.
+Wildflife Quiz is an online guessing game written in Python using the Flask framework. It tests user's knowledge about wild animals in fun and entertaining way, not being too challenging.
  
 ## UX
 
-When creating this project I was greatly influenced by Clarissa Peterson's [Learning Responsive Web Design](http://shop.oreilly.com/product/0636920029199.do). Some methods (e.g. start with the design for the smallest screen size, use "rem" units, minification) were directly taken from her book. I wanted to make the project "mobile first" and responsive. It was designed with simplicity in mind, meant to be easy to navigate and give user simple information to process. It's a casual entertainment for casual gamers hence its trivial look. I've tried to keep it close to modern trends in apps design. My goal was to create a user-friendly web application and I wanted to make it obvious, how to use available functionalities.
+When creating this project I was greatly influenced by Clarissa Peterson's [Learning Responsive Web Design](http://shop.oreilly.com/product/0636920029199.do). Some methods (e.g. start with the design for the smallest screen size, use "rem" units, minification) were directly taken from her book. I wanted to make the project mobile-first and responsive. There were several break points used and most of the functionality was set up using the default layout
+for devices with a width of 575 pixels or fewer. It was designed with simplicity in mind, meant to be easy to navigate and give user simple information to process. It's a casual entertainment for casual gamers hence its trivial look. I've tried to keep it close to modern trends in apps design. My goal was to create a user-friendly web application and I wanted to make it obvious, how to use available functionalities.
 
 ### Users Stories:
 
@@ -68,7 +69,7 @@ In addition, you may also use this section to discuss plans for additional featu
 
 ## Testing
 ### Automated written tests:
-### Manual Browser Testing during develoment:
+### Manual testing during develoment:
 ### User testing:
 
 All tests can be found in test.py file.
