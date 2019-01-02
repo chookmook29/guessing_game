@@ -12,34 +12,43 @@ app.config.from_object(__name__)
 
 @app.route("/")
 def index():
-	return render_template("index.html")
+	message = "Please enter your name."
+	return render_template("index.html", message = message)
 
 @app.route("/initial_word", methods = ["POST", "GET"])
 def initial_word():
-	with open('data/animals.json') as json_data:
-		animals = json.load(json_data)
-	letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
-	session["letter_array"] = letter_array
-	used = "USED: "
-	guess = "?"
-	session["used"] = used
-	score = 0
-	attempts = 8
-	session["score"] = score
-	session["attempts"] = attempts
-	current = random.choice(list(animals.keys()))
-	current_image = animals[current]
-	del animals[current]
-	session["animals"] = animals
-	current_hidden = "ˍ" * len(current)# Special narrower underscore used from expanded UTF-8 set, standard one causing problems
-	session["current"] = current
-	session["current_image"] = current_image
-	session["current_hidden"] = current_hidden
 	user = request.form["new_user"]
-	user_greeting = "Welcome " + user + "!"
-	session["user_greeting"] = user_greeting
-	session["user"] = user
-	return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts, score =  score, used = used, guess = guess)
+	count = len(user)
+	if count < 3:
+		message = "Your name is too short, please try again."
+		return render_template("index.html", message = message)
+	elif count > 10:
+		message = "Your name is too long, please try again."
+		return render_template("index.html", message = message)
+	else:
+		with open('data/animals.json') as json_data:
+			animals = json.load(json_data)
+		letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
+		session["letter_array"] = letter_array
+		used = "USED: "
+		guess = "?"
+		session["used"] = used
+		score = 0
+		attempts = 8
+		session["score"] = score
+		session["attempts"] = attempts
+		current = random.choice(list(animals.keys()))
+		current_image = animals[current]
+		del animals[current]
+		session["animals"] = animals
+		current_hidden = "ˍ" * len(current)# Special narrower underscore used from expanded UTF-8 set, standard one causing problems
+		session["current"] = current
+		session["current_image"] = current_image
+		session["current_hidden"] = current_hidden
+		user_greeting = "Welcome " + user + "!"
+		session["user_greeting"] = user_greeting
+		session["user"] = user
+		return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts, score =  score, used = used, guess = guess)
 
 @app.route("/user_guess", methods=['POST', "GET"])
 def user_guess():

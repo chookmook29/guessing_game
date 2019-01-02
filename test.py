@@ -43,6 +43,18 @@ class test(unittest.TestCase):
 		guess = random.choice(letters)
 		self.assertNotIn(guess, current)
 
+	def test_username_length(self):
+		new_user = "AB"
+		count = len(new_user)
+		if count < 3:
+			passed = True
+		elif count > 10:
+			passed = False
+		else:
+			passed = False
+		self.assertEqual(passed, True) 
+
+
 	def test_dictionary(self):
 		dictionary = {"ALLIGATOR":"alligator.png"}
 		current = random.choice(list(dictionary.keys()))
@@ -73,7 +85,6 @@ Check if app creates empty dictionary for highscores when first entry arrives,
 even if I declared highscore as empty dictionary during initialization,
 Sessions was using type conversion changing its value to None crashing whole app
 """
-				
 
 
 class FlaskTestCase(unittest.TestCase):
