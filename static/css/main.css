@@ -321,9 +321,6 @@ h2,h3 {
 
 article {
 	max-width: 80%;
-	-webkit-hyphens: auto;
-  	-ms-hyphens: auto;
-  	hyphens: auto;
 }
 
 p {
@@ -466,7 +463,6 @@ p {
 	margin-bottom: 0.312rem;
 }
 .custom_container {
-	width: 98%;
 	margin-right: auto;
 	margin-left: auto;
 }
