@@ -1,3 +1,7 @@
+@font-face {
+font-family: "bebas";
+src: url("/static/font/BEBAS.ttf");
+} 
 @media screen and (max-width: 575px) and (orientation: landscape){
 
 	body {
@@ -306,12 +310,20 @@ article {
 }
 
 h1 {
+	font-family: 'Bebas', Arial, sans-serif;
 	text-align: left;
 	color: white;
 }
 
-h2 {
+h2,h3 {
 	color: white;
+}
+
+article {
+	max-width: 80%;
+	-webkit-hyphens: auto;
+  	-ms-hyphens: auto;
+  	hyphens: auto;
 }
 
 p {
@@ -425,6 +437,7 @@ p {
 }
 
 .letter_button {
+	font-family: 'Bebas', Arial, sans-serif;
 	cursor: pointer;
 	color: white;
 	display: inline-block;
@@ -454,7 +467,7 @@ p {
 	margin-bottom: 0.312rem;
 }
 .custom_container {
-	width: 100%;
+	width: 98%;
 	margin-right: auto;
 	margin-left: auto;
 }
