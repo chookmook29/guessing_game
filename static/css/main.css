@@ -437,7 +437,6 @@ p {
 }
 
 .letter_button {
-	font-family: 'Bebas', Arial, sans-serif;
 	cursor: pointer;
 	color: white;
 	display: inline-block;
