@@ -12,19 +12,22 @@ app.config.from_object(__name__)
 
 @app.route("/")
 def index():
+	message_color = "white"
 	message = "Please enter your name."
-	return render_template("index.html", message = message)
+	return render_template("index.html", message = message, message_color = message_color)
 
 @app.route("/initial_word", methods = ["POST", "GET"])
 def initial_word():
 	user = request.form["new_user"]
 	count = len(user)
 	if count < 3:
+		message_color = "red"
 		message = "Your name is too short, please try again."
-		return render_template("index.html", message = message)
+		return render_template("index.html", message = message, message_color = message_color)
 	elif count > 10:
+		message_color = "red"
 		message = "Your name is too long, please try again."
-		return render_template("index.html", message = message)
+		return render_template("index.html", message = message, message_color = message_color)
 	else:
 		with open('data/animals.json') as json_data:
 			animals = json.load(json_data)
