@@ -290,10 +290,11 @@ src: url("/static/font/BEBAS.ttf");
 
 html {
 	font-size: 100%;/* Used for rem units to display correctly*/
-	min-height: 100%;
+	height: 100%;/* Make body have 100% of the browser height */
 }
 
 body {
+	min-height: 100%;/* No blank space beneath document */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
