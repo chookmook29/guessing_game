@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!-- No base.html block used to prevent player from seeing main menu before creating new username, otherwise it would make one of the positions on the menu list blank-->
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -10,7 +10,7 @@
     <title>{% block title %}{% endblock %}</title>
     <style>
     	.message {
-        	color: {{ message_color }};
+        	color: {{ message_color }};/*Only way to apply effects of changed variable value, it wouldn't work in separate stylesheet*/
         }
     </style>
   </head>

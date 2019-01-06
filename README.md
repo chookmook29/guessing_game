@@ -60,8 +60,6 @@ Some concepts of the design and some features changed over time in the developme
     - Used for automated testing.
 - [JSON](https://www.json.org/)
     - **JSON** was used to keep data in separate file.
-- [AWS S3](https://aws.amazon.com/s3/)
-    - Used to store large static media files.
 - [Balsamiq](https://balsamiq.com/)
     - Before development started, **Balsamiq** was used for wireframes.
 - [GitHub]((https://www.github.com/)
