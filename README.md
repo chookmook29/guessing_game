@@ -105,6 +105,7 @@ All tests can be found in test.py file.
     - When all words are guessed, the page should be redirected to the final score view.
 - testing score view:
     - It should display user's points or final points if it's final score view
+    - It should also display other user's points
 
 
 ### User testing:

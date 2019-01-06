@@ -5,7 +5,7 @@ src: url("/static/font/BEBAS.ttf");
 @media screen and (max-width: 575px) and (orientation: landscape){
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.2)), url("/static/img/sunrise.jpg");
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
 	}
 
 	h1 {
@@ -38,7 +38,7 @@ src: url("/static/font/BEBAS.ttf");
 @media screen and (max-width: 575px) and (orientation: portrait) {
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.2)), url("/static/img/sunrise_narrow.jpg");
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise_narrow.jpg");
 	}
 	h1 {
 		font-size: 3rem;
@@ -67,7 +67,7 @@ src: url("/static/font/BEBAS.ttf");
 @media screen and (min-width: 576px) and (orientation: landscape) {
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.2)), url("/static/img/sunrise.jpg");
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
 	}
 
 	h1 {
@@ -100,7 +100,7 @@ src: url("/static/font/BEBAS.ttf");
 @media screen and (min-width: 576px) and (orientation: portrait) {/*Nexus 7*/
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.2)), url("/static/img/sunrise_narrow.jpg");
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise_narrow.jpg");
 	}
 
 	h1 {
@@ -131,7 +131,7 @@ src: url("/static/font/BEBAS.ttf");
 @media screen and (min-width: 768px) and (orientation: landscape) {/*Used with iPhone X*/
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.2)), url("/static/img/sunrise.jpg");
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
 	}
 	h1 {
 		font-size: 3rem;
@@ -163,7 +163,7 @@ src: url("/static/font/BEBAS.ttf");
 @media screen and (min-width: 768px) and (orientation: portrait) {/*iPad, iPad Mini, Kindle Fire in portrait mode*/
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.2)), url("/static/img/sunrise_narrow.jpg");
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise_narrow.jpg");
 	}
 
 	h1 {
@@ -194,7 +194,7 @@ src: url("/static/font/BEBAS.ttf");
 @media screen and (min-width: 992px) and (orientation: landscape) {/*Tablets in landscape mode*/
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.2)), url("/static/img/sunrise.jpg");
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
 	}
 	h1 {
 		font-size: 3rem;
@@ -226,7 +226,7 @@ src: url("/static/font/BEBAS.ttf");
 @media screen and (min-width: 992px) and (orientation: portrait) {/*iPad Pro*/
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.2)), url("/static/img/sunrise.jpg");
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
 	}
 
 	h1 {
@@ -257,7 +257,7 @@ src: url("/static/font/BEBAS.ttf");
 @media screen and (min-width: 1200px) {/*Wide screens: laptop, desktop PC, iPad Pro landscape mode*/
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.2)), url("/static/img/sunrise.jpg");
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
 	}
 	h1 {
 		font-size: 6rem;
@@ -306,8 +306,9 @@ footer {
 	width: 100%;
 	text-align: center;
 }
+
 article {
-	padding: 2rem; 	
+	padding-top: 100px;
 }
 
 h1 {
@@ -316,12 +317,14 @@ h1 {
 	color: white;
 }
 
-h2,h3 {
+h3 {
+	padding-top: 30px;
 	color: white;
 }
 
-article {
-	max-width: 80%;
+h2 {
+	padding-top: 30px;
+	color: white;
 }
 
 p {
