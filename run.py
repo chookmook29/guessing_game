@@ -27,7 +27,7 @@ def initial_word():
 		message_color = "red"
 		message = "Your name is too long, please try again."
 		return render_template("index.html", message = message, message_color = message_color)
-	else:# After checking for user name length, this is the main part of this template's code
+	else:# After checking for user name length, this is the main part of the template's code
 		with open('data/animals.json') as json_data:# Dictionary stored in json file to save space in main code, could use separate scripts but app's scope is too small
 			animals = json.load(json_data)
 		letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
@@ -39,7 +39,7 @@ def initial_word():
 		attempts = 8
 		session["score"] = score
 		session["attempts"] = attempts
-		current = random.choice(list(animals.keys()))# "list" method added because Python 3 would interpret it incorrectly
+		current = random.choice(list(animals.keys()))# "list" method added because Python 3 would interpret it incorrectly (not as a list)
 		current_image = animals[current]
 		del animals[current] # This feature prevents current question from reappearing later in the game
 		session["animals"] = animals
@@ -48,6 +48,9 @@ def initial_word():
 		session["current_image"] = current_image
 		session["current_hidden"] = current_hidden
 		user_greeting = "Welcome " + user + "!"
+		""" "user_greeting" differs from "user", as it's whole sentence pasted into main game screen, I couldn't just use "user" variable as the sentence changes to "TRY NOW" and "CORRECT" after
+			certain actions, so I had to create different, more specific variable than just "user"
+		"""
 		session["user_greeting"] = user_greeting
 		session["user"] = user
 		return render_template("game.html", user_greeting = user_greeting, current = current_hidden, current_image = current_image, user = user, letter_array = letter_array, attempts = attempts, score =  score, used = used, guess = guess)
@@ -91,6 +94,9 @@ def user_guess():
 			user = session.get("user")
 			score = session.get("score")
 			highscore = session.get("highscore")
+			""" Main reason of using if statements below is that even if highscore was declared as empty dictionary
+				somewhere at the beginning, it would always get value of NoneType every time its value is requested, so thats why it has to be 
+				declared as an empty dictionary here again every new game starts. Possible flask-sessions bug or limitation?"""
 			if highscore is None:
 				highscore = {}
 				highscore[user] = score
