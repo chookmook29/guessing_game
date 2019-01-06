@@ -10,8 +10,8 @@ for devices with a width of max 575 pixels. It was designed with simplicity in m
 ### Users Stories:
 
 To make things easier, I've created User Stories. Here are some examples:
-- As a user, I want to able sign in. 
-- As a user, I want to check if I picked correct letter.
+- As a user, I want to able create a game using unique username. 
+- As a user, I want to check if I've chosen correct letter.
 - As a user, I want to check my score.
 - As a user, I want to compare my score with other players.
 - As a user, I want help when I'm stuck.
@@ -24,24 +24,20 @@ Examples of wireframes I've used for this project:
 - [More compact mobile first layout](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup3.png)
 - [Just before project's development started](https://github.com/chookmook29/guessing_game/blob/master/wireframes/mockup4.png)
 
-Some concepts of the design and some features changed over the development process.
+Some concepts of the design and some features changed over time in the development process.
 
 ## Features
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
  
 ### Existing Features
 
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
-
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+- Menu - allows users to check score, rules and quit, by having them click on list of links.
+- Main screen - allows users to play game, see remaining attempts left, and all letter used, and most recent letter.
+- Set of buttons representing all letters of alphabet - allows users to chose letter, by pressing button of their choice.
+- Space below letters and main info - allows users to check hint, by hovering over a hint word.
 
 ### Features Left to Implement
 
-- I would like to make onmouseover event in JavaScript trigger loss of player's remaining "attempts" by one each time, however this would require 
+- I would like to make onmouseover event in JavaScript that triggers loss of player's remaining "attempts" by one each time, however this would require a lot of additional work. 
 
 ## Technologies Used
 
@@ -78,8 +74,7 @@ When writing backend code I used unittest before adding new functionalities. I h
 The project has been tested on various browsers, including Firefox, Chrome, Opera, and Safari. 
 All tests can be found in test.py file.
 
-### Automated written tests:
-####Tests for code logic:
+###Automated tests for code logic:
 
 - test_correct(self) - testing most important feature of the game, when guess is correct, it creates new hidden word with guess displayed
 - test_wrong(self) - tests effects of a wrong guess
@@ -89,7 +84,7 @@ All tests can be found in test.py file.
 - test_delete_dict_element(self) - testing deletion of a dictionary element
 - test_empty_dict(self) - test of important feature preventing NoneType variable creation
     
-####Tests for deployed:
+###Automated tests for deployed version:
 
 - test_index(self) - testing GET request of a index.html template and a response code 
 - test_data_post(self) - testing POST request of a index.html template and a response code 
@@ -110,6 +105,9 @@ All tests can be found in test.py file.
     - Try to press button with a correct letter. Word should now include letter you just guessed(or multiple letters if they duplicate in given word).
     - Try to press button with a last remaining correct letter. New word should appear and points should be added to the overall score in menu at the top right corner of the page.
     - When all words are guessed, the page should be redirected to the final score view.
+- testing score view:
+    - It should display user's points or final points if it's final score view
+
 
 ### User testing:
 
@@ -117,14 +115,13 @@ Webpage was also tested by group of users using similar scenarios as mentioned i
 
 ### Known issues:
 
-
-
+Touchscreens don't support hover effects on game's hint. 
 
 ## Deployment
 
 The application is deployed at [Wildlife Quiz](https://test-my-app-ok.herokuapp.com/).
 
-In order to deploy, I have made following changes:
+In order to deploy, following changes has been made:
 - Set 'debug' value in run.py file to False
 - Added requirements.txt and Procfile, as required by heroku
 - Set Heroku Config Vars:
