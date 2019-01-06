@@ -5,46 +5,45 @@ import json
 
 app = Flask(__name__)
 
-app.secret_key = "secret_word"
+app.secret_key = "secret_word"# Password for sessions, which wouldn't work otherwise
 
-SESSION_TYPE = "redis"
+SESSION_TYPE = "redis"# Again, needed by sessions to work, redis used as the storage backend because there is a lot of session data
 app.config.from_object(__name__)
 
 @app.route("/")
 def index():
-	message_color = "white"
 	message = "Please enter your name."
-	return render_template("index.html", message = message, message_color = message_color)
+	return render_template("index.html", message = message)
 
 @app.route("/initial_word", methods = ["POST", "GET"])
 def initial_word():
 	user = request.form["new_user"]
-	count = len(user)
+	count = len(user)# Defensive design, preventing users from creating nicknames with zero, not enough, or too many letters
 	if count < 3:
-		message_color = "red"
+		message_color = "red"# As pointed out by mentor, red colour for warning messages to improve UX
 		message = "Your name is too short, please try again."
-		return render_template("index.html", message = message, message_color = message_color)
+		return render_template("index.html", message = message, message_color = message_color)# Colour variable sent straight to template, wouldn't work in separate stylesheet css file 
 	elif count > 10:
 		message_color = "red"
 		message = "Your name is too long, please try again."
 		return render_template("index.html", message = message, message_color = message_color)
-	else:
-		with open('data/animals.json') as json_data:
+	else:# After checking for user name length, this is the main part of this template's code
+		with open('data/animals.json') as json_data:# Dictionary stored in json file to save space in main code, could use separate scripts but app's scope is too small
 			animals = json.load(json_data)
 		letter_array = ("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
-		session["letter_array"] = letter_array
-		used = "USED: "
+		session["letter_array"] = letter_array# Array is being stored because it's being used few more times in other templates
+		used = "USED: "# "used" and "guess" are variables initially displayed on game's main screen, so they need some initial value, otherwise app would display blank spaces
 		guess = "?"
 		session["used"] = used
-		score = 0
+		score = 0# Resets game's elements so previous users can't continue same game after losing
 		attempts = 8
 		session["score"] = score
 		session["attempts"] = attempts
-		current = random.choice(list(animals.keys()))
+		current = random.choice(list(animals.keys()))# "list" method added because Python 3 would interpret it incorrectly
 		current_image = animals[current]
-		del animals[current]
+		del animals[current] # This feature prevents current question from reappearing later in the game
 		session["animals"] = animals
-		current_hidden = "ˍ" * len(current)# Special narrower underscore used from expanded UTF-8 set, standard one causing problems
+		current_hidden = "ˍ" * len(current)# Special narrower underscore used from expanded UTF-8 set, standard one causing problems (would merge and create continuous line)
 		session["current"] = current
 		session["current_image"] = current_image
 		session["current_hidden"] = current_hidden

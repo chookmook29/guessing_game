@@ -12,14 +12,14 @@
   <body>
   	<div class="custom_container text-center">
       <header>
-        <div class="row">
-          <div class="col-12">
+        <div class="custom_row">
+          <div class="content">
             <div class="float-left">
               <h1>Wildlife  Quiz</h1>
             </div>
           </div>
         </div>     
-      </header>	
+      </header> 
 	{% for item in highscore|dictsort(false, 'value', reverse = True) %}<!--Players list taken from highscore dictionary and sorted in reverse order so best player's result is generated last, so it's displayed on top of the page, it is not possible to sort dictionary in Python, only tuples but the're immutable and player list changes all the time-->
 		<p>{{ item[0] }} : {{ item[1] }}</p>
 	{% endfor %}
