@@ -77,7 +77,7 @@ When writing backend code I used unittest before adding new functionalities. I h
 The project has been tested on various browsers, including Firefox, Chrome, Opera, and Safari. 
 All tests can be found in test.py file.
 
-###Automated tests for code logic:
+### Automated tests for code logic:
 
 - test_correct(self) - testing most important feature of the game, when guess is correct, it creates new hidden word with guess displayed
 - test_wrong(self) - tests effects of a wrong guess
@@ -87,7 +87,7 @@ All tests can be found in test.py file.
 - test_delete_dict_element(self) - testing deletion of a dictionary element
 - test_empty_dict(self) - test of important feature preventing NoneType variable creation
     
-###Automated tests for deployed version:
+### Automated tests for deployed version:
 
 - test_index(self) - testing GET request of a index.html template and a response code 
 - test_data_post(self) - testing POST request of a index.html template and a response code 
