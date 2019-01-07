@@ -77,12 +77,12 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 2.8rem;
 	}
 	article {
-		font-size: 1rem;
+		font-size: 0.9rem;
 		padding-left: 3%;
 		padding-right: 3%;
 	}
 	.current {
-		font-size: 2rem;
+		font-size: 1.8rem;
 	}
 	.letter_button {
 		padding: 0.5rem 1rem;
