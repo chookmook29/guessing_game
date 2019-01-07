@@ -11,6 +11,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 2.8rem;/* smaller font size to fit very narrow viewport, otherwise there would be overflowed items */
 	}
 	article {
+		padding-top: 100px;/* way of making it appear lower in document */
 		font-size: 0.8rem;/* had to be smaller, otherwise it wouldn't fit iPhone 5/SE screen */
 		padding-left: 3%;
 		padding-right: 3%;
@@ -43,6 +44,8 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 3rem;
 	}
 	article {
+		padding-top: 70px;
+		font-size: 0.7rem;
 		padding-left: 3%;
 		padding-right: 3%;
 	}
@@ -77,6 +80,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 2.8rem;
 	}
 	article {
+		padding-top: 100px;
 		font-size: 0.9rem;
 		padding-left: 3%;
 		padding-right: 3%;
@@ -119,6 +123,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 3rem;
 	}
 	article {
+		padding-top: 100px;
 		padding-left: 3%;
 		padding-right: 3%;
 	}
@@ -129,7 +134,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 2rem;
 	}
 	.letter_button {/* no padding makes letters fit the screen */
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 	.my_button {
 		font-size: 1rem;
@@ -195,6 +200,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 3rem;
 	}
 	article {
+		padding-top: 100px;
 		font-size: 0.8rem;/* smaller font to fit screen */
 		padding-left: 5%;/* more padding as the screen is very wide and short */
 		padding-right: 5%;
@@ -231,6 +237,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 3rem;
 	}
 	article {
+		padding-top: 100px;
 		padding-left: 3%;
 		padding-right: 3%;
 	}
@@ -272,6 +279,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 3rem;
 	}
 	article {
+		padding-top: 100px;
 		padding-left: 10%;
 		padding-right: 10%;
 	}
@@ -317,6 +325,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 3rem;
 	}
 	article {
+		padding-top: 100px;
 		padding-left: 3%;
 		padding-right: 3%;
 	}
@@ -358,6 +367,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 6rem;
 	}
 	article {
+		padding-top: 100px;
 		padding-left: 20%;
 		padding-right: 20%;
 	}
@@ -416,7 +426,6 @@ footer {/* special configuration used to make it stay on bottom of viewport */
 
 article {
 	text-align: justify;/* looks aesthetically better when justified */
-	padding-top: 100px;/* way of making it appear lower in document */
 }
 
 h1 {
@@ -426,12 +435,11 @@ h1 {
 }
 
 h3 {
-	padding-top: 30px;
 	color: white;
 }
 
 h2 {
-	padding: 30px;
+	padding: 10px;
 	color: white;
 }
 
