@@ -101,11 +101,13 @@ def user_guess():
 				highscore = {}
 				highscore[user] = score
 				session["highscore"] = highscore
-				return render_template("final.html", highscore = highscore, user = user, score = score)	
+				final_message = "GAME OVER!"
+				return render_template("final.html", highscore = highscore, user = user, score = score, final_message = final_message)	
 			else:
 				highscore[user] = score
 				session["highscore"] = highscore
-				return render_template("final.html", highscore = highscore, user = user, score = score)
+				final_message = "GAME OVER!"
+				return render_template("final.html", highscore = highscore, user = user, score = score, final_message = final_message)
 		else:
 			session["attempts"] = attempts
 			return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "WRONG!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
@@ -131,11 +133,13 @@ def next_word():
 			highscore = {}
 			highscore[top_user] = score
 			session["highscore"] = highscore
-			return render_template("final.html", highscore = highscore, user = user, score = score)	
+			final_message = "Congratulations!"
+			return render_template("final.html", highscore = highscore, user = user, score = score, final_message = final_message)	
 		else:
 			highscore[top_user] = score
 			session["highscore"] = highscore
-			return render_template("final.html", highscore = highscore, user = user, score = score)	
+			final_message = "Congratulations!"
+			return render_template("final.html", highscore = highscore, user = user, score = score, final_message = final_message)	
 	else:
 		current = random.choice(list(animals.keys()))
 		current_image = animals[current]
@@ -187,25 +191,6 @@ def rules():
 	user = session.get("user")
 	score = session.get("score")
 	return render_template("rules.html", user = user, score = score)
-
-@app.route("/final", methods=['POST', "GET"])
-def final():
-	user = session.get("user")
-	score = session.get("score")
-	highscore = session.get("highscore")
-	top_user = session.get("user")
-	score = session.get("score")
-	highscore = session.get("highscore")
-	if highscore is None:
-		highscore = {}
-		highscore[top_user] = score
-		session["highscore"] = highscore
-		return render_template("final.html", highscore = highscore, user = user, score = score)	
-	else:
-		highscore[top_user] = score
-		session["highscore"] = highscore
-		return render_template("final.html", highscore = highscore, user = user, score = score)
-
 
 @app.errorhandler(410)
 @app.errorhandler(404)

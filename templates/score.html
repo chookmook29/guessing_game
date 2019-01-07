@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block title%}Score{% endblock %}
 {% block content %}
-	{% for item in highscore|dictsort(false, 'value', reverse = True) %}<!--Players list taken from highscore dictionary and sorted in reverse order so best player's result is generated last, so it's displayed on top of the page, it is not possible to sort dictionary in Python, only tuples but the're immutable and player list changes all the time-->
-		<h3>{{ item[0] }} : {{ item[1] }}</h3>
-	{% endfor %}
+	<main>
+		<h2>Top players:</h2>
+		{% for item in highscore|dictsort(false, 'value', reverse = True) %}<!--Players list taken from highscore dictionary and sorted in reverse order so best player's result is generated last, so it's displayed on top of the page, it is not possible to sort dictionary in Python, only tuples but the're immutable and player list changes all the time-->
+			<h3>{{ item[0] }} : {{ item[1] }}</h3>
+		{% endfor %}
+	</main>
 {% endblock %}

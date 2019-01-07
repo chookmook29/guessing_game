@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block title%}Correct{% endblock %}
 {% block content %}
-    <h2>Correct!</h2><!--h2 used because it's smaller and will not get aligned to left like h1-->
-    <h2>The answer is: {{current}}</h2>
-    <form action = "/next_word" method = "post">
-         <p><input type = "submit" value = "Next word" /></p>
-    </form>
+	<main>
+	    <h2>Correct!</h2><!--h2 used because it's smaller and will not get aligned to left like h1-->
+	    <h2>The answer is: {{current}}</h2>
+	    <form action = "/next_word" method = "post">
+	         <p><input type = "submit" value = "Next word" /></p>
+	    </form>
+	</main>
 {% endblock %}

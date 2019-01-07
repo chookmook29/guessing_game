@@ -1,22 +1,24 @@
 {% extends "base.html" %}
 {% block title%}Game{% endblock %}
 {% block content %}
-		<p class="user_greeting">{{ user_greeting }}</p>
-	    <p class="text-pop-up-top"><span class="important">{{ attempts }}</span> attempts left, your guess: <span class="important">{{ guess }}</span></p>
-	    <p><span class="unimportant">{{ used }}</span></p>
-	    <p class="current">{{ current }}</p>
-	    <form class="form" action = "/user_guess" method = "post">
-	         {% for letter in letter_array %}
-	         <button type="submit" value={{letter}} name="guess" class="letter_button">{{letter}}</button>
-	         {% endfor %}
-	    </form>
-	        <div class="my_hint">
-	        	<div class="my_row justify-content-center">
-		            <img src="{{ url_for('static', filename='img/' + current_image) }}" alt="Hint" class="image">
-		            <div class="overlay">
-		                <div class="text">HINT</div>
-		            </div>
-	        	</div>
-	        </div>
+		<main>
+			<p class="user_greeting">{{ user_greeting }}</p>
+		    <p class="text-pop-up-top"><span class="important">{{ attempts }}</span> attempts left, your guess: <span class="important">{{ guess }}</span></p>
+		    <p><span class="unimportant">{{ used }}</span></p>
+		    <p class="current">{{ current }}</p>
+		    <form class="form" action = "/user_guess" method = "post">
+		         {% for letter in letter_array %}
+		         <button type="submit" value={{letter}} name="guess" class="letter_button">{{letter}}</button>
+		         {% endfor %}
+		    </form>
+		        <div class="my_hint">
+		        	<div class="my_row justify-content-center">
+			            <img src="{{ url_for('static', filename='img/' + current_image) }}" alt="Hint" class="image">
+			            <div class="overlay">
+			                <div class="text">HINT</div>
+			            </div>
+		        	</div>
+		        </div>
+	    </main>
 {% endblock %}
 	
