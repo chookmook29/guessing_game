@@ -5,11 +5,11 @@ Wildlife Quiz is a quick and easy online guessing game for one person that requi
 ## UX
 
 When creating this project I was greatly influenced by Clarissa Peterson's [Learning Responsive Web Design](http://shop.oreilly.com/product/0636920029199.do). Some methods (e.g. start with the design for the smallest screen size, use "rem" units, minification) were directly taken from her book. I wanted to make the project mobile-first and responsive. There were several break points used and most of the functionality was set up using the default layout
-for devices with a width of max 575 pixels. It was designed with simplicity in mind, meant to be easy to navigate and give user simple information to process. It's a casual entertainment for casual gamers hence its trivial look. I've tried to keep it close to modern trends in apps design. My goal was to create a user-friendly web application and I wanted to make it obvious, how to use available functionalities.
+for devices with a width of max 575 pixels. It was designed with simplicity in mind, meant to be easy to navigate and give user simple information to process. It's a casual entertainment for casual gamers hence its trivial look. Because it's such a low difficulty and there is certain educational aspect in the game, it should be appropriate for children. I've tried to keep it close to modern trends in apps design. My goal was to create a user-friendly web application and I wanted to make it obvious, how to use available functionalities.
 
 ### Users Stories:
 
-To make things easier, I've created User Stories. Here are some examples:
+To make things easier, I've created User Stories. Here are examples:
 - As a user, I want to able create a game using unique username. 
 - As a user, I want to check if I've chosen correct letter.
 - As a user, I want to check my score.
@@ -34,6 +34,9 @@ Some concepts of the design and some features changed over time in the developme
 - Main screen - allows users to play game, see remaining attempts left, and all letter used, and most recent letter.
 - Set of buttons representing all letters of alphabet - allows users to chose letter, by pressing button of their choice.
 - Space below letters and main info - allows users to check hint, by hovering over a hint word.
+- Rules screen - allows users to read rules of the game and useful tips.
+- Score screen - allows users to check user's scores and who is leading.
+- Final score screen - similar to score screen, it's displayed after finishing the game.
 
 ### Features Left to Implement
 
@@ -64,6 +67,8 @@ Some concepts of the design and some features changed over time in the developme
     - Before development started, **Balsamiq** was used for wireframes.
 - [GitHub]((https://www.github.com/)
     - Used for version control and backup.
+- [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
+    - Adjusting elements of project's frontend.
 
 
 ## Testing
@@ -90,7 +95,7 @@ All tests can be found in test.py file.
 - test_rules(self) - testing if rules.html template is deployed with few variables
 - test_final(self) - similar to test_rules(self), different template
 
-### Manual testing during developement:
+### Manual testing during development:
 
 - testing game view:
     - Submit username and start the actual game, the game page will load. 
