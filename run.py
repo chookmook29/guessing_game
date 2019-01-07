@@ -44,12 +44,15 @@ def initial_word():
 		del animals[current] # This feature prevents current question from reappearing later in the game
 		session["animals"] = animals
 		current_hidden = "ˍ" * len(current)# Special narrower underscore used from expanded UTF-8 set, standard one causing problems (would merge and create continuous line)
+		""" Name "current_hidden" means it has letters concealed behind "ˍ", not hidden from view in general, it can be potentially misleading. 
+			Variable "current" is the hidden word in a true meaning.
+		"""
 		session["current"] = current
 		session["current_image"] = current_image
 		session["current_hidden"] = current_hidden
 		user_greeting = "Welcome " + user + "!"
 		""" "user_greeting" differs from "user", as it's whole sentence pasted into main game screen, I couldn't just use "user" variable as the sentence changes to "TRY NOW" and "CORRECT" after
-			certain actions, so I had to create different, more specific variable than just "user"
+			certain actions, so I had to create different, more specific variable than just "user".
 		"""
 		session["user_greeting"] = user_greeting
 		session["user"] = user
@@ -70,26 +73,26 @@ def user_guess():
 	score = session.get("score")
 	attempts =  session.get("attempts")
 	if guess in current and guess not in current_hidden:# "guess not in current_hidden" condition prevents from guessing same exact letter twice (defensive design)
-		new_hidden = ""
-		for x in range(len(current)):
+		new_hidden = ""# Initialized as empty otherwise wouldn't be possible to add value
+		for x in range(len(current)):# Searching through and adding to displayed word
 			if guess == current[x]:
 				new_hidden += guess
 			else:
 				new_hidden += current_hidden[x]
 		current_hidden = new_hidden
 		session["current_hidden"] = current_hidden
-		if current_hidden == current:
+		if current_hidden == current:# What happens when the whole word is guessed correctly
 			score += 1
 			attempts = 8
 			session["current"] = current
 			session["score"] = score
 			session["attempts"] = attempts
 			return render_template("correct.html", guess = guess, current = current, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array, attempts = attempts)
-		else:
+		else: # Correct guess but not the whole word yet
 			return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "CORRECT!", used = used, score = score, user = user, letter_array = letter_array, attempts = attempts)
-	elif current_hidden != current:
+	else:# Wrong guess or same letter again
 		attempts -= 1
-		if attempts == 0:
+		if attempts == 0:# If down to zero attempts
 			highscore = session.get("highscore")
 			user = session.get("user")
 			score = session.get("score")

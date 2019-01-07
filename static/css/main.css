@@ -367,6 +367,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 6rem;
 	}
 	article {
+		font-size: 1rem;
 		padding-top: 100px;
 		padding-left: 20%;
 		padding-right: 20%;
@@ -494,9 +495,9 @@ p {
 	-moz-animation-fill-mode:forwards;
 	animation-fill-mode:forwards;
 
-	-webkit-animation-duration:1s;
-	-moz-animation-duration:1s;
-	animation-duration:1s;
+	-webkit-animation-duration: 0.7s;
+	-moz-animation-duration: 0.7s;
+	animation-duration: 0.7s;
 }
 
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
