@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block title%}Game{% endblock %}
 {% block content %}
-		<p>{{ user_greeting }}</p>
+		<p class="user_greeting">{{ user_greeting }}</p>
 	    <p class="text-pop-up-top"><span class="important">{{ attempts }}</span> attempts left, your guess: <span class="important">{{ guess }}</span></p>
 	    <p><span class="unimportant">{{ used }}</span></p>
 	    <p class="current">{{ current }}</p>

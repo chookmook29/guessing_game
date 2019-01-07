@@ -1,13 +1,44 @@
 @font-face {
-font-family: "bebas";
+font-family: "bebas";/*Reason behind using custom font was to create more original and less generic look of the website*/
 src: url("/static/font/BEBAS.ttf");
 } 
+@media screen and (max-width: 320px) and (orientation: portrait) {/*This media query was created with iPhone 5/SE in mind, because viewport is so small, hint image had to be removed*/
+
+	body {
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");/*For certain viewports, narrower background image had to be used otherwise it would be cropped off-enter*/
+	}
+	h1 {
+		font-size: 2.8rem;/*Smaller font size to fit very narrow viewport, otherwise there would be overflowed items*/
+	}
+	article {
+		font-size: 0.8rem;/*Had to be smaller, otherwise it wouldn't fit iPhone 5/SE screen*/
+		padding-left: 3%;
+		padding-right: 3%;
+	}
+	.my_row {
+		display: none;/*Hint disabled, not enough space*/
+	}
+	.form {
+		padding: 0 10% 0 10%;
+	}
+	.current {
+		font-size: 3.5rem;
+	}
+	.my_button {
+		font-size: 1rem;
+	}
+	.drop_button {
+		font-size: 2.5rem;
+	}
+	.user_greeting {
+		display: block;
+	}
+}
 @media screen and (max-width: 575px) and (orientation: landscape){
 
 	body {
 		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
 	}
-
 	h1 {
 		font-size: 3rem;
 	}
@@ -19,35 +50,34 @@ src: url("/static/font/BEBAS.ttf");
 		padding: 0 10% 0 10%;
 	}
 	.current {
-		font-size: 4rem;
+		font-size: 1.3rem;
 	}
-	.letter_button {
-		font-size: 1rem;
-		padding: 1rem 2rem;
+	.letter_button {/*No padding makes letters fit the screen*/
+		font-size: 0.49rem;
 	}
 	.my_button {
 		font-size: 1rem;
 	}
-	.image {
-		width: 80%;
-	}
-	.overlay {
-		width: 50%;
-		height: 50%;
-	}
 	.drop_button {
 		font-size: 3rem;
 	}
+	.my_row {
+		display: none;/*Hint disabled, not enough space*/
+	}
+	.user_greeting {
+		display: none;/*Same reason as above, no space*/
+	}
 }
-@media screen and (max-width: 575px) and (orientation: portrait) {
+@media screen and (min-width: 321px) and (orientation: portrait) {/*Media query for screens between older generation's and modern ones*/
 
 	body {
 		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise_narrow.jpg");
 	}
 	h1 {
-		font-size: 3rem;
+		font-size: 2.8rem;
 	}
 	article {
+		font-size: 1rem;
 		padding-left: 3%;
 		padding-right: 3%;
 	}
@@ -55,7 +85,6 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 2rem;
 	}
 	.letter_button {
-		font-size: 0.7rem;
 		padding: 0.5rem 1rem;
 	}
 	.my_button {
@@ -66,10 +95,18 @@ src: url("/static/font/BEBAS.ttf");
 	}
 	.overlay {
 		width: 50%;
-		height: 50%;
 	}
 	.drop_button {
-		font-size: 3rem;
+		font-size: 2.5rem;
+	}
+	.my_row {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.user_greeting {
+		display: block;
 	}
 }
 @media screen and (min-width: 576px) and (orientation: landscape) {
@@ -89,27 +126,25 @@ src: url("/static/font/BEBAS.ttf");
 		padding: 0 10% 0 10%;
 	}
 	.current {
-		font-size: 4rem;
+		font-size: 2rem;
 	}
-	.letter_button {
+	.letter_button {/*No padding makes letters fit the screen*/
 		font-size: 1rem;
-		padding: 1rem 2rem;
 	}
 	.my_button {
 		font-size: 1rem;
 	}
-	.image {
-		width: 50%;
-	}
-	.overlay {
-		width: 50%;
-		height: 50%;
+	.my_row {
+		display: none;/*Hint disabled, not enough space*/
 	}
 	.drop_button {
 		font-size: 3rem;
 	}
+	.user_greeting {
+		display: none;/*Same reason as above, no space*/
+	}
 }
-@media screen and (min-width: 576px) and (orientation: portrait) {/*Nexus 7*/
+@media screen and (min-width: 576px) and (orientation: portrait) {
 
 	body {
 		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise_narrow.jpg");
@@ -137,10 +172,18 @@ src: url("/static/font/BEBAS.ttf");
 	}
 	.overlay {
 		width: 50%;
-		height: 50%;
 	}
 	.drop_button {
 		font-size: 3rem;
+	}
+	.my_row {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.user_greeting {
+		display: block;
 	}
 }
 @media screen and (min-width: 768px) and (orientation: landscape) {/*Used with iPhone X*/
@@ -173,10 +216,18 @@ src: url("/static/font/BEBAS.ttf");
 	}
 	.overlay {
 		width: 50%;
-		height: 50%;
 	}
 	.drop_button {
 		font-size: 3rem;
+	}
+	.my_row {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.user_greeting {
+		display: block;
 	}
 }
 @media screen and (min-width: 768px) and (orientation: portrait) {/*iPad, iPad Mini, Kindle Fire in portrait mode*/
@@ -207,10 +258,18 @@ src: url("/static/font/BEBAS.ttf");
 	}
 	.overlay {
 		width: 50%;
-		height: 50%;
 	}
 	.drop_button {
 		font-size: 3rem;
+	}
+	.my_row {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.user_greeting {
+		display: block;
 	}
 }
 @media screen and (min-width: 992px) and (orientation: landscape) {/*Tablets in landscape mode*/
@@ -238,15 +297,23 @@ src: url("/static/font/BEBAS.ttf");
 	.my_button {
 		font-size: 1rem;
 	}
-	.image {
-		width: 50%;
+	.image {/*Smaller to fit tablet screen in landscape mode*/
+		width: 30%;
 	}
 	.overlay {
 		width: 50%;
-		height: 50%;
 	}
 	.drop_button {
 		font-size: 3rem;
+	}
+	.my_row {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.user_greeting {
+		display: block;
 	}
 }
 @media screen and (min-width: 992px) and (orientation: portrait) {/*iPad Pro*/
@@ -265,22 +332,30 @@ src: url("/static/font/BEBAS.ttf");
 	.current {
 		font-size: 4rem;
 	}
-	.letter_button {
-		font-size: 1rem;
+	.letter_button {/*Much larger because there is a lot of empty space on this screen configuartion*/
+		font-size: 3rem;
 		padding: 1rem 2rem;
 	}
 	.my_button {
 		font-size: 1rem;
 	}
-	.image {
-		width: 50%;
+	.image {/*Same as above, much larger image can fit this viewport*/
+		width: 80%;
 	}
 	.overlay {
 		width: 50%;
-		height: 50%;
 	}
 	.drop_button {
 		font-size: 3rem;
+	}
+	.my_row {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.user_greeting {
+		display: block;
 	}
 }
 @media screen and (min-width: 1200px) {/*Wide screens: laptop, desktop PC, iPad Pro landscape mode*/
@@ -310,14 +385,22 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 1rem;
 	}
 	.image {
-		width: 50%;
+		width: 38%;/* Had to be smaller otherwise wouldn't fit laptop with HiDPI screen*/
 	}
 	.overlay {
 		width: 50%;
-		height: 50%;
 	}
 	.drop_button {
 		font-size: 3rem;
+	}
+	.my_row {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.user_greeting {
+		display: block;
 	}
 }
 
@@ -333,7 +416,7 @@ body {
 	background-position: center center;
 }
 
-footer {
+footer {/*Special configuration used to make it stay on bottom of viewport*/
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -341,8 +424,8 @@ footer {
 }
 
 article {
-	text-align: justify;
-	padding-top: 100px;
+	text-align: justify;/*Looks aesthetically better when justified*/
+	padding-top: 100px;/*Way of making it appear lower in document*/
 }
 
 h1 {
@@ -371,13 +454,6 @@ p {
 	width: 50%;
 	border: 4px;
 	border-color: white;
-}
-
-.my_row {
-	display: -ms-flexbox;
-	display: flex;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
 }
 
 .image {
