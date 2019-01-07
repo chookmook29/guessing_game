@@ -195,39 +195,30 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 3rem;
 	}
 	article {
-		padding-left: 3%;
-		padding-right: 3%;
+		font-size: 0.8rem;/* smaller font to fit screen */
+		padding-left: 5%;/* more padding as the screen is very wide and short */
+		padding-right: 5%;
 	}
 	.form {
 		padding: 0 10% 0 10%;
 	}
 	.current {
-		font-size: 4rem;
+		font-size: 3rem;
 	}
 	.letter_button {
 		font-size: 1rem;
-		padding: 1rem 2rem;
 	}
 	.my_button {
 		font-size: 1rem;
-	}
-	.image {
-		width: 50%;
-	}
-	.overlay {
-		width: 50%;
 	}
 	.drop_button {
 		font-size: 3rem;
 	}
 	.my_row {
-		display: -ms-flexbox;
-		display: flex;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
+		display: none;
 	}
 	.user_greeting {
-		display: block;
+		display: none;
 	}
 }
 @media screen and (min-width: 768px) and (orientation: portrait) {/* iPad, iPad Mini, Kindle Fire in portrait mode */
