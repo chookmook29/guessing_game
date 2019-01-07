@@ -1,22 +1,22 @@
 @font-face {
-font-family: "bebas";/*Reason behind using custom font was to create more original and less generic look of the website*/
+font-family: "bebas";/* reason behind using custom font was to create more original and less generic look of the website */
 src: url("/static/font/BEBAS.ttf");
 } 
-@media screen and (max-width: 320px) and (orientation: portrait) {/*This media query was created with iPhone 5/SE in mind, because viewport is so small, hint image had to be removed*/
+@media screen and (max-width: 320px) and (orientation: portrait) {/* this media query was created with iPhone 5/SE in mind, because viewport is so small, hint image had to be removed */
 
 	body {
-		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");/*For certain viewports, narrower background image had to be used otherwise it would be cropped off-enter*/
+		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");/* for certain viewports, narrower background image had to be used otherwise it would be cropped off-enter */
 	}
 	h1 {
-		font-size: 2.8rem;/*Smaller font size to fit very narrow viewport, otherwise there would be overflowed items*/
+		font-size: 2.8rem;/* smaller font size to fit very narrow viewport, otherwise there would be overflowed items */
 	}
 	article {
-		font-size: 0.8rem;/*Had to be smaller, otherwise it wouldn't fit iPhone 5/SE screen*/
+		font-size: 0.8rem;/* had to be smaller, otherwise it wouldn't fit iPhone 5/SE screen */
 		padding-left: 3%;
 		padding-right: 3%;
 	}
 	.my_row {
-		display: none;/*Hint disabled, not enough space*/
+		display: none;/* hint disabled, not enough space */
 	}
 	.form {
 		padding: 0 10% 0 10%;
@@ -52,7 +52,7 @@ src: url("/static/font/BEBAS.ttf");
 	.current {
 		font-size: 1.3rem;
 	}
-	.letter_button {/*No padding makes letters fit the screen*/
+	.letter_button {/* no padding makes letters fit the screen */
 		font-size: 0.49rem;
 	}
 	.my_button {
@@ -62,13 +62,13 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 3rem;
 	}
 	.my_row {
-		display: none;/*Hint disabled, not enough space*/
+		display: none;/* hint disabled, not enough space */
 	}
 	.user_greeting {
-		display: none;/*Same reason as above, no space*/
+		display: none;/* same reason as above, no space */
 	}
 }
-@media screen and (min-width: 321px) and (orientation: portrait) {/*Media query for screens between older generation's and modern ones*/
+@media screen and (min-width: 321px) and (orientation: portrait) {/* media query for screens between older generation's and modern ones */
 
 	body {
 		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise_narrow.jpg");
@@ -128,20 +128,20 @@ src: url("/static/font/BEBAS.ttf");
 	.current {
 		font-size: 2rem;
 	}
-	.letter_button {/*No padding makes letters fit the screen*/
+	.letter_button {/* no padding makes letters fit the screen */
 		font-size: 1rem;
 	}
 	.my_button {
 		font-size: 1rem;
 	}
 	.my_row {
-		display: none;/*Hint disabled, not enough space*/
+		display: none;/* hint disabled, not enough space */
 	}
 	.drop_button {
 		font-size: 3rem;
 	}
 	.user_greeting {
-		display: none;/*Same reason as above, no space*/
+		display: none;/* same reason as above, no space */
 	}
 }
 @media screen and (min-width: 576px) and (orientation: portrait) {
@@ -186,7 +186,7 @@ src: url("/static/font/BEBAS.ttf");
 		display: block;
 	}
 }
-@media screen and (min-width: 768px) and (orientation: landscape) {/*Used with iPhone X*/
+@media screen and (min-width: 768px) and (orientation: landscape) {/* used with iPhone X */
 
 	body {
 		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
@@ -230,7 +230,7 @@ src: url("/static/font/BEBAS.ttf");
 		display: block;
 	}
 }
-@media screen and (min-width: 768px) and (orientation: portrait) {/*iPad, iPad Mini, Kindle Fire in portrait mode*/
+@media screen and (min-width: 768px) and (orientation: portrait) {/* iPad, iPad Mini, Kindle Fire in portrait mode */
 
 	body {
 		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise_narrow.jpg");
@@ -272,7 +272,7 @@ src: url("/static/font/BEBAS.ttf");
 		display: block;
 	}
 }
-@media screen and (min-width: 992px) and (orientation: landscape) {/*Tablets in landscape mode*/
+@media screen and (min-width: 992px) and (orientation: landscape) {/* tablets in landscape mode */
 
 	body {
 		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
@@ -297,7 +297,7 @@ src: url("/static/font/BEBAS.ttf");
 	.my_button {
 		font-size: 1rem;
 	}
-	.image {/*Smaller to fit tablet screen in landscape mode*/
+	.image {/* smaller to fit tablet screen in landscape mode */
 		width: 30%;
 	}
 	.overlay {
@@ -316,7 +316,7 @@ src: url("/static/font/BEBAS.ttf");
 		display: block;
 	}
 }
-@media screen and (min-width: 992px) and (orientation: portrait) {/*iPad Pro*/
+@media screen and (min-width: 992px) and (orientation: portrait) {/* iPad Pro */
 
 	body {
 		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
@@ -332,14 +332,14 @@ src: url("/static/font/BEBAS.ttf");
 	.current {
 		font-size: 4rem;
 	}
-	.letter_button {/*Much larger because there is a lot of empty space on this screen configuartion*/
+	.letter_button {/* much larger because there is a lot of empty space on this screen configuartion */
 		font-size: 3rem;
 		padding: 1rem 2rem;
 	}
 	.my_button {
 		font-size: 1rem;
 	}
-	.image {/*Same as above, much larger image can fit this viewport*/
+	.image {/* same as above, much larger image can fit this viewport */
 		width: 80%;
 	}
 	.overlay {
@@ -358,7 +358,7 @@ src: url("/static/font/BEBAS.ttf");
 		display: block;
 	}
 }
-@media screen and (min-width: 1200px) {/*Wide screens: laptop, desktop PC, iPad Pro landscape mode*/
+@media screen and (min-width: 1200px) {/* wide screens: laptop, desktop PC, iPad Pro landscape mode */
 
 	body {
 		background: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0, 0.1)), url("/static/img/sunrise.jpg");
@@ -385,7 +385,7 @@ src: url("/static/font/BEBAS.ttf");
 		font-size: 1rem;
 	}
 	.image {
-		width: 38%;/* Had to be smaller otherwise wouldn't fit laptop with HiDPI screen*/
+		width: 38%;/* had to be smaller otherwise wouldn't fit laptop with HiDPI screen */
 	}
 	.overlay {
 		width: 50%;
@@ -405,18 +405,18 @@ src: url("/static/font/BEBAS.ttf");
 }
 
 html {
-	font-size: 100%;/* Used for rem units to display correctly*/
-	height: 100%;/* Make body have 100% of the browser height */
+	font-size: 100%;/* used for rem units to display correctly */
+	height: 100%;/* make body have 100% of the browser height */
 }
 
 body {
-	min-height: 100%;/* No blank space beneath document */
+	min-height: 100%;/* no blank space beneath document */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center center;
 }
 
-footer {/*Special configuration used to make it stay on bottom of viewport*/
+footer {/* special configuration used to make it stay on bottom of viewport */
 	position: absolute;
 	bottom: 0;
 	width: 100%;
@@ -424,8 +424,8 @@ footer {/*Special configuration used to make it stay on bottom of viewport*/
 }
 
 article {
-	text-align: justify;/*Looks aesthetically better when justified*/
-	padding-top: 100px;/*Way of making it appear lower in document*/
+	text-align: justify;/* looks aesthetically better when justified */
+	padding-top: 100px;/* way of making it appear lower in document */
 }
 
 h1 {
@@ -448,7 +448,7 @@ p {
 	color: white;
 }
 
-.my_hint {/* Can't use Bootstrap's container class because it uses default padding left and right*/
+.my_hint {/* can't use Bootstrap's container class because it uses default padding left and right */
 	margin: 0 auto;
 	position: relative;
 	width: 50%;
@@ -462,9 +462,9 @@ p {
 	height: 100%;
 }
 
-.overlay {
+.overlay {/* had to use this class to make the "HINT" word visible */
 	margin: 0 auto;
-	cursor: -webkit-grab; 
+	cursor: -webkit-grab;/* cursor graphic change, to make it more appealing to user */
 	cursor: grab;
 	border-radius: 10px;
 	position: absolute;
@@ -477,63 +477,32 @@ p {
 	transition: .5s ease;
 }
 
-.my_hint:hover .overlay {
+.my_hint:hover .overlay {/* two things happens at the same time, "HINT" of overlay class disappears and image fades in */
 	opacity: 0;
 }
 
 .my_hint img {
-  opacity: 0;
+	opacity: 0;
 }
 
- .my_hint:hover img {
- 	opacity: 1;
- 	-webkit-animation: fadeInFromNone 0.7s;
-    -moz-animation: fadeInFromNone 0.7s;
-    -o-animation: fadeInFromNone 0.7s;
-    animation: fadeInFromNone 0.7s;
+.my_hint:hover img {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+
+	-webkit-animation-fill-mode:forwards;  /* crucial element, this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
 }
 
-@-webkit-keyframes fadeInFromNone {
-    0% {
-        opacity: 0;
-    }
-    100% {
-    	display: block;
-        opacity: 1;
-    }
-}
-
-@-moz-keyframes fadeInFromNone {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-    	display: block;
-        opacity: 1;
-    }
-}
-
-@-o-keyframes fadeInFromNone {
-    0% {
-        opacity: 0;
-    }
-    100% {
-    	display: block;
-        opacity: 1;
-    }
-}
-
-@keyframes fadeInFromNone {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-    	display: block;
-        opacity: 1;
-    }
-}
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 
 .text {
 	color: white;
@@ -558,10 +527,10 @@ p {
 	margin-right: 0.312rem;
 	margin-top: 0.312rem;
 	margin-bottom: 0.312rem;
-	text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);/* Shadow makes button visible when background is very bright*/
+	text-shadow: 0px 0px 1px rgba(0, 0, 0, 1);/* shadow makes button visible when background is very bright*/
 }
 
-.letter_button:focus {
+.letter_button:focus {/* keeps buttons simple, I didn't want any decorations */
 	outline: none;
 }
 
@@ -606,18 +575,18 @@ p {
 .my_dropdown:hover .my_dropdown-content {
     display: block;
 }
-.drop_button {/*Mobile screens navigation(bars symbol) styling*/
+.drop_button {/* mobile screens navigation(bars symbol) styling */
 	border: none;
 	background-color: transparent;
 	color: white;
 	display: block;
 	outline: none;
 }
-.drop_button:focus {/*Navigation's styling after activation*/
+.drop_button:focus {/* menu's styling after activation */
 	border: none;
 	outline: none;
 }
-.drop_button:hover {/*Navigation's styling on hover*/
+.drop_button:hover {/* menu's styling on hover */
 	border: none;
 }
 .current {
@@ -626,7 +595,7 @@ p {
 .initial_form {
 	padding: 10%;
 }
-.custom_row {/*Bootstrap row was setting margins left and right -15px*/
+.custom_row {/* bootstrap row was setting margins left and right -15px, that's why I had to use custom_row */
 	display: flex;
 }
 .content {

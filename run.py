@@ -122,7 +122,7 @@ def next_word():
 	score = session.get("score")
 	attempts = session.get("attempts")
 	animals = session.get("animals")
-	if animals == {}:
+	if animals == {}:# If dictionary becomes empty, it means player completed the game
 		user = session.get("user")
 		score = session.get("score")
 		highscore = session.get("highscore")
@@ -155,7 +155,7 @@ def next_word():
 		session["attempts"] = attempts
 		return render_template("game.html", guess = guess, current = current_hidden, current_image = current_image, user_greeting = "TRY NOW!", used = used, score = score, user = user, letter_array = letter_array,  attempts = attempts)
 
-@app.route("/check", methods=['POST', "GET"])
+@app.route("/check", methods=['POST', "GET"])# Option that still make it possible to come back to main game
 def check():
 	user = session.get("user")
 	score = session.get("score")
@@ -173,7 +173,7 @@ def check():
 		session["highscore"] = highscore
 		return render_template("score.html", highscore = highscore, user = user, score = score)
 
-@app.route("/back", methods=['POST', "GET"])
+@app.route("/back", methods=['POST', "GET"])# Keeps all the crucial variables to make continuing game possible after choosing option in the menu
 def back():
 	letter_array = session.get("letter_array")
 	current_hidden = session.get("current_hidden")
