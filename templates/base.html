@@ -10,14 +10,14 @@
     <title>{% block title %}{% endblock %}</title>
   </head>
   <body>
-  	<div class="custom_container text-center">
+  	<div class="custom_container text-center"><!-- Second class is from Bootstrap 4 library -->
       <header>
         <div class="custom_row">
           <div class="content">
-            <div class="float-left">
+            <div class="float-left"><!-- Bootstrap 4 class -->
               <h1>Wildlife  Quiz</h1>
             </div>
-            <div class="my_dropdown float-right"><button class="drop_button">&#9776;</button>
+            <div class="my_dropdown float-right"><button class="drop_button">&#9776;</button><!-- Again, Bootstrap 4 class -->
               <div class="my_dropdown-content">
                 <a href="{{ url_for("back") }}">{{ user|upper }}: {{ score }}</a>
                 <a href="{{ url_for("check") }}">TOP PLAYERS</a>
@@ -31,8 +31,8 @@
     {% block content %}
     {% endblock %}
       <footer><!--Footer element added to base.html to show up on every page-->
-    				<p>Copyright &#169; 2018</p>
+    	 <p>Copyright &#169; 2018</p>
       </footer>
-	</div>
+	 </div>
   </body>
 </html>

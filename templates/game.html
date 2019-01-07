@@ -3,17 +3,17 @@
 {% block content %}
 		<main>
 			<p class="user_greeting">{{ user_greeting }}</p>
-		    <p class="text-pop-up-top"><span class="important">{{ attempts }}</span> attempts left, your guess: <span class="important">{{ guess }}</span></p>
-		    <p><span class="unimportant">{{ used }}</span></p>
-		    <p class="current">{{ current }}</p>
+		    <p class="text-pop-up-top"><span class="important">{{ attempts }}</span> attempts left, your guess: <span class="important">{{ guess }}</span></p><!-- "important" class and span element make it more visually attractive, creates different sizes of letters in one sentence -->
+		    <p><span class="unimportant">{{ used }}</span></p><!-- Smaller font size to add some variety to displayed text -->
+		    <p class="current">{{ current }}</p><!-- Separate class with big font for crucial element of the game -->
 		    <form class="form" action = "/user_guess" method = "post">
-		         {% for letter in letter_array %}
+		         {% for letter in letter_array %}<!-- All buttons are created from one array, makes the code more streamlined but I don't have full control over layout of the buttons -->
 		         <button type="submit" value={{letter}} name="guess" class="letter_button">{{letter}}</button>
 		         {% endfor %}
 		    </form>
 		        <div class="my_hint">
-		        	<div class="my_row justify-content-center">
-			            <img src="{{ url_for('static', filename='img/' + current_image) }}" alt="Hint" class="image">
+		        	<div class="my_row justify-content-center"><!-- Second class is from Bootstrap 4 library -->
+			            <img src="{{ url_for('static', filename='img/' + current_image) }}" alt="Hint" class="image"><!-- Value attached to a key in animals dictionary is being used here -->
 			            <div class="overlay">
 			                <div class="text">HINT</div>
 			            </div>
