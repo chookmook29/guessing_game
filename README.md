@@ -65,8 +65,6 @@ Some concepts of the design and some features changed over time in the developme
     - **JSON** was used to keep data in separate file.
 - [Balsamiq](https://balsamiq.com/)
     - Before development started, **Balsamiq** was used for wireframes.
-- [GitHub]((https://www.github.com/)
-    - Used for version control and backup.
 - [Chrome DevTools](https://developers.google.com/web/tools/chrome-devtools/)
     - Adjusting elements of project's frontend.
 
