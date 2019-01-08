@@ -1,11 +1,39 @@
-{% extends "base.html" %}
-{% block title%}Correct{% endblock %}
-{% block content %}
-	<main>
-	    <h2>Correct!</h2><!--h2 used because it's smaller and will not get aligned to left like h1-->
-	    <h2>The answer is: {{current}}</h2>
-	    <form action = "/next_word" method = "post">
-	         <p><input type = "submit" value = "Next word" /></p>
-	    </form>
-	</main>
-{% endblock %}
+<!DOCTYPE html><!-- I didn't want to use base.html block in this case, because I didn't wanted player to navigate the menu back to the main game, from here he can only go back to index.html-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='img/icon.png') }}">
+    <title>Correct</title>
+  </head>
+  <body>
+  	<div class="custom_container text-center"><!-- Second class is from Bootstrap 4 library -->
+		<header>
+			<div class="custom_row">
+			  <div class="content">
+			    <div class="float-left"><!-- Bootstrap 4 class -->
+			      <h1>Wildlife Quiz</h1>
+			    </div>
+			    <div class="my_dropdown float-right"><button class="drop_button">&#9776;</button><!-- Again, Bootstrap 4 class -->
+			    <!-- Menu disabled on this subpage, navigating through it while word is guessed was causing issues -->
+			    </div>
+			  </div>
+			</div>     
+		</header>	
+		<main>
+			<h2>Correct!</h2><!--h2 used because it's smaller and will not get aligned to left like h1-->
+			<h2>The answer is: {{current}}</h2>
+			<form action = "/next_word" method = "post">
+				<p><input type = "submit" value = "Next word" /></p>
+			</form>
+		</main>
+      <footer><!--Footer element added to base.html to show up on every page-->
+		<p>Copyright &#169; 2018</p>
+      </footer>
+	 </div>
+  </body>
+</html>
+	
