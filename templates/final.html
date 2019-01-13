@@ -23,7 +23,7 @@
       <main>
         <h2>{{ final_message }}</h2>
         {% for item in highscore|dictsort(false, 'value', reverse = True) %}<!--Players list taken from highscore dictionary and sorted in reverse order so best player's result is generated last, so it's displayed on top of the page, it is not possible to sort dictionary in Python, only tuples but the're immutable and player list changes all the time-->
-        <p>{{ item[0] }} : {{ item[1] }}</p>
+        <h4>{{ item[0] }} : {{ item[1] }}</h4>
         {% endfor %}
         <form action = "/" method = "get|post">
           <button class="my_button" type="submit">Back to start</button>
