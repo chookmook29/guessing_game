@@ -415,12 +415,9 @@ body {
 	min-height: 100%;/* no blank space beneath document */
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: center center;
 }
 
 footer {/* special configuration used to make it stay on bottom of viewport */
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	text-align: center;
 }
