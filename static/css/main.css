@@ -408,7 +408,7 @@ src: url("/static/font/BEBAS.ttf");
 
 html {
 	font-size: 100%;/* used for rem units to display correctly */
-	height: 100%;/* make body have 100% of the browser height */
+	min-height: 100%;/* make body have 100% of the browser height */
 }
 
 body {
